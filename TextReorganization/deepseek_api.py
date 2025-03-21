@@ -16,7 +16,9 @@ def word_count(text):
 original_word_count = word_count(input_text)
 
 # DeepSeek API 设置
-api_key = "sk-1200c3bcf97e4fbab959684ff5acae34"  # 请替换为你的 API Key
+api_key = ""  # 请替换为你的 API Key
+with open("/home/jxy/Data/deepseek_api_key.txt", "r") as file:
+    api_key = file.readline().strip()  # 读取第一行并去除首尾空格和换行符
 base_url = "https://api.deepseek.com"
 
 # 推荐模型：deepseek-chat（更经济）
