@@ -1,7 +1,7 @@
 from transformers import T5Tokenizer, T5ForConditionalGeneration
 
 # **1️⃣ 加载本地训练好的模型**
-model_name = "./t5_reorder_test"
+model_name = "/home/jxy/models/t5_reorder_test"
 tokenizer = T5Tokenizer.from_pretrained(model_name)
 model = T5ForConditionalGeneration.from_pretrained(model_name)
 
