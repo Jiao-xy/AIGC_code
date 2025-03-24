@@ -17,30 +17,54 @@ model.eval()
 
 tokenizer.pad_token = tokenizer.eos_token  # 设置 PAD token
 
+# 创建输出文件夹
+output_dir = "classification_results_diff"
+os.makedirs(output_dir, exist_ok=True)
+
 # 文件路径（请修改为实际路径）
 json_files = {
     "init": "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-init_llscore_ppl.jsonl",
-    "generation": "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-chatgpt-generation_llscore_ppl.jsonl"
+    "generation": "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-chatgpt-generation_llscore_ppl.jsonl",
+    "init_random": "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-init_random_llscore_ppl.jsonl",
+    "generation_random": "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-chatgpt-generation_random_llscore_ppl.jsonl"
 }
 
 # 读取 JSONL 文件并构建数据
 def load_jsonl(file_path):
-    data = []
-    labels = []
+    data = {}
     with open(file_path, "r", encoding="utf-8") as f:
         for line in f:
             entry = json.loads(line)
-            data.append([entry["LLScore"], entry["PPL"]])
-            labels.append(0 if "init" in file_path else 1)  # 0: init, 1: generation
-    return data, labels
+            data[entry["id"]] = [entry["LLScore"], entry["PPL"]]
+    return data
 
 # 加载数据
-init_data, init_labels = load_jsonl(json_files["init"])
-generation_data, generation_labels = load_jsonl(json_files["generation"])
+init_data = load_jsonl(json_files["init"])
+generation_data = load_jsonl(json_files["generation"])
+init_random_data = load_jsonl(json_files["init_random"])
+generation_random_data = load_jsonl(json_files["generation_random"])
 
-# 合并数据
-data = np.array(init_data + generation_data)
-labels = np.array(init_labels + generation_labels)
+# 计算 PPL 和 LLScore 变化值
+data = []
+labels = []
+
+for key in init_data.keys():
+    if key in init_random_data:
+        llscore_diff = init_random_data[key][0] - init_data[key][0]
+        ppl_diff = init_random_data[key][1] - init_data[key][1]
+        data.append([llscore_diff, ppl_diff])
+        labels.append(0)  # 0: init
+
+for key in generation_data.keys():
+    if key in generation_random_data:
+        llscore_diff = generation_random_data[key][0] - generation_data[key][0]
+        ppl_diff = generation_random_data[key][1] - generation_data[key][1]
+        data.append([llscore_diff, ppl_diff])
+        labels.append(1)  # 1: generation
+
+# 转换为 NumPy 数组
+data = np.array(data)
+labels = np.array(labels)
 
 # 划分训练集和测试集
 X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.2, random_state=42, stratify=labels)
@@ -87,7 +111,7 @@ def plot_classification_report(report):
     plt.title("Classification Report Metrics")
     plt.xticks(ticks=x, labels=categories)
     plt.legend()
-    plt.savefig("classification_report_metrics.svg")
+    plt.savefig(os.path.join(output_dir, "classification_report_metrics.svg"))
     plt.close()
 
 plot_classification_report(report)
@@ -99,7 +123,7 @@ sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['Init',
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
-plt.savefig("confusion_matrix.svg")
+plt.savefig(os.path.join(output_dir, "confusion_matrix.svg"))
 plt.close()
 
 # 绘制 ROC 曲线
@@ -110,15 +134,15 @@ plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
 plt.title("Receiver Operating Characteristic (ROC) Curve")
 plt.legend(loc="lower right")
-plt.savefig("roc_curve.svg")
+plt.savefig(os.path.join(output_dir, "roc_curve.svg"))
 plt.close()
 
 # 绘制分类结果可视化
 plt.figure(figsize=(8, 6))
 plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred, cmap="coolwarm", alpha=0.7)
-plt.xlabel("LLScore")
-plt.ylabel("PPL")
-plt.title("Classification based on LLScore & PPL")
+plt.xlabel("LLScore Change")
+plt.ylabel("PPL Change")
+plt.title("Classification based on LLScore & PPL Changes")
 plt.colorbar(label="Predicted Label (0: Init, 1: Generation)")
-plt.savefig("classification_result.svg")
+plt.savefig(os.path.join(output_dir, "classification_result.svg"))
 plt.close()

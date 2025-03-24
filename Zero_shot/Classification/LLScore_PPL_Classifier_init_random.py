@@ -18,6 +18,9 @@ model.eval()
 tokenizer.pad_token = tokenizer.eos_token  # 设置 PAD token
 
 # 文件路径（请修改为实际路径）
+output_dir = "classification_results_LLScore_PPL"
+os.makedirs(output_dir, exist_ok=True)
+
 json_files = {
     "init": "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-init_llscore_ppl.jsonl",
     "generation": "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-chatgpt-generation_llscore_ppl.jsonl",
@@ -40,22 +43,24 @@ generation_data = load_jsonl(json_files["generation"])
 init_random_data = load_jsonl(json_files["init_random"])
 generation_random_data = load_jsonl(json_files["generation_random"])
 
-# 计算 PPL 和 LLScore 变化值
+# 组织数据结构
 data = []
 labels = []
 
 for key in init_data.keys():
     if key in init_random_data:
-        llscore_diff = init_random_data[key][0] - init_data[key][0]
-        ppl_diff = init_random_data[key][1] - init_data[key][1]
-        data.append([llscore_diff, ppl_diff])
+        data.append([
+            init_data[key][0], init_data[key][1],
+            init_random_data[key][0], init_random_data[key][1]
+        ])
         labels.append(0)  # 0: init
 
 for key in generation_data.keys():
     if key in generation_random_data:
-        llscore_diff = generation_random_data[key][0] - generation_data[key][0]
-        ppl_diff = generation_random_data[key][1] - generation_data[key][1]
-        data.append([llscore_diff, ppl_diff])
+        data.append([
+            generation_data[key][0], generation_data[key][1],
+            generation_random_data[key][0], generation_random_data[key][1]
+        ])
         labels.append(1)  # 1: generation
 
 # 转换为 NumPy 数组
@@ -107,7 +112,7 @@ def plot_classification_report(report):
     plt.title("Classification Report Metrics")
     plt.xticks(ticks=x, labels=categories)
     plt.legend()
-    plt.savefig("classification_report_metrics.svg")
+    plt.savefig(os.path.join(output_dir, "classification_report_metrics.svg"))
     plt.close()
 
 plot_classification_report(report)
@@ -119,7 +124,7 @@ sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['Init',
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Confusion Matrix")
-plt.savefig("confusion_matrix.svg")
+plt.savefig(os.path.join(output_dir, "confusion_matrix.svg"))
 plt.close()
 
 # 绘制 ROC 曲线
@@ -130,15 +135,15 @@ plt.xlabel("False Positive Rate")
 plt.ylabel("True Positive Rate")
 plt.title("Receiver Operating Characteristic (ROC) Curve")
 plt.legend(loc="lower right")
-plt.savefig("roc_curve.svg")
+plt.savefig(os.path.join(output_dir, "roc_curve.svg"))
 plt.close()
 
 # 绘制分类结果可视化
 plt.figure(figsize=(8, 6))
 plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred, cmap="coolwarm", alpha=0.7)
-plt.xlabel("LLScore Change")
-plt.ylabel("PPL Change")
-plt.title("Classification based on LLScore & PPL Changes")
+plt.xlabel("LLScore")
+plt.ylabel("PPL")
+plt.title("Classification based on LLScore & PPL")
 plt.colorbar(label="Predicted Label (0: Init, 1: Generation)")
-plt.savefig("classification_result.svg")
+plt.savefig(os.path.join(output_dir, "classification_result.svg"))
 plt.close()
