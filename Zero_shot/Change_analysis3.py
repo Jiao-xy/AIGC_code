@@ -28,40 +28,16 @@ generation_random_df = load_jsonl(generation_random_file_path)
 for df in [init_df, generation_df, init_random_df, generation_random_df]:
     df.sort_values(by="id", inplace=True)
 
-# 生成直方图和密度曲线
-fig, axes = plt.subplots(2, 2, figsize=(10, 8))
-fig.suptitle("Log Probability Change (Perturbation Discrepancy)")
+# 计算横轴范围（剔除极端值）
+def get_trimmed_limits(data, trim_percent=0.01):
+    lower = np.percentile(data, trim_percent * 100)
+    upper = np.percentile(data, (1 - trim_percent) * 100)
+    return lower, upper
 
-hist_params = {"bins": 50, "alpha": 0.7, "density": True}
+llscore_lower, llscore_upper = get_trimmed_limits(pd.concat([init_df["LLScore"], generation_df["LLScore"]]))
+ppl_lower, ppl_upper = get_trimmed_limits(pd.concat([init_df["PPL"], generation_df["PPL"]]))
 
-sns.histplot(init_df["LLScore"], kde=True, label="Init", color="blue", ax=axes[0, 0])
-sns.histplot(init_random_df["LLScore"], kde=True, label="Init Random", color="orange", ax=axes[0, 0])
-axes[0, 0].set_title("Init vs Init Random")
-axes[0, 0].set_ylabel("Frequency")
-
-sns.histplot(generation_df["LLScore"], kde=True, label="Generation", color="blue", ax=axes[0, 1])
-sns.histplot(generation_random_df["LLScore"], kde=True, label="Generation Random", color="orange", ax=axes[0, 1])
-axes[0, 1].set_title("Generation vs Generation Random")
-
-sns.histplot(init_df["PPL"], kde=True, label="Init", color="blue", ax=axes[1, 0])
-sns.histplot(init_random_df["PPL"], kde=True, label="Init Random", color="orange", ax=axes[1, 0])
-axes[1, 0].set_title("Init PPL vs Init Random PPL")
-axes[1, 0].set_xlabel("Log Probability Change")
-axes[1, 0].set_ylabel("Frequency")
-
-sns.histplot(generation_df["PPL"], kde=True, label="Generation", color="blue", ax=axes[1, 1])
-sns.histplot(generation_random_df["PPL"], kde=True, label="Generation Random", color="orange", ax=axes[1, 1])
-axes[1, 1].set_title("Generation PPL vs Generation Random PPL")
-axes[1, 1].set_xlabel("Log Probability Change")
-
-for ax in axes.flat:
-    ax.legend()
-
-plt.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig("perturbation_discrepancy.svg")
-plt.close()
-
-# 生成 Init 和 Generation 直接对比图
+# 生成 Init 和 Generation 直接对比图（调整横轴范围）
 fig, axes = plt.subplots(1, 2, figsize=(10, 4))
 fig.suptitle("Init vs Generation Comparison")
 
@@ -70,15 +46,17 @@ sns.histplot(generation_df["LLScore"], kde=True, label="Generation LLScore", col
 axes[0].set_title("Init vs Generation LLScore")
 axes[0].set_xlabel("LLScore")
 axes[0].set_ylabel("Frequency")
+axes[0].set_xlim(llscore_lower, llscore_upper)
 
 sns.histplot(init_df["PPL"], kde=True, label="Init PPL", color="blue", ax=axes[1])
 sns.histplot(generation_df["PPL"], kde=True, label="Generation PPL", color="red", ax=axes[1])
 axes[1].set_title("Init vs Generation PPL")
 axes[1].set_xlabel("PPL")
+axes[1].set_xlim(ppl_lower, ppl_upper)
 
 for ax in axes.flat:
     ax.legend()
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
-plt.savefig("init_vs_generation.svg")
+plt.savefig("init_vs_generation_trimmed.svg")
 plt.close()
