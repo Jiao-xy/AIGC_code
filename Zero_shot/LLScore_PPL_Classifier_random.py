@@ -36,23 +36,22 @@ def compute_llscore_ppl(text):
     return log_likelihood, perplexity
 
 # 读取 JSONL 文件并计算 LLScore 和 PPL
-def load_and_process_jsonl(file_path, label):
-    data = []
-    labels = []
+def load_and_process_jsonl(file_path):
+    data = {}
     
     with open(file_path, "r", encoding="utf-8") as file:
         for line in file:
             try:
                 entry = json.loads(line.strip())
                 abstract = entry.get("abstract", "").strip()
-                if abstract:
+                doc_id = entry.get("id", None)
+                if abstract and doc_id:
                     llscore, ppl = compute_llscore_ppl(abstract)
-                    data.append([llscore, ppl])
-                    labels.append(label)
+                    data[doc_id] = (llscore, ppl)
             except json.JSONDecodeError:
                 print(f"JSON 解码错误，跳过 {file_path} 的某一行。")
     
-    return data, labels
+    return data
 
 # 处理文本，打乱摘要中的句子顺序
 def shuffle_abstract_sentences(file_path):
@@ -78,22 +77,30 @@ def shuffle_abstract_sentences(file_path):
     return new_file_path
 
 # 读取所有数据
-all_data = []
-all_labels = []
+data = []
+labels = []
 
 for label, file_path in json_files.items():
     label_val = 0 if "init" in label else 1  # 0: init, 1: generation
-    random_file_path = shuffle_abstract_sentences(file_path)
-    data, labels = load_and_process_jsonl(random_file_path, label_val)
-    all_data.extend(data)
-    all_labels.extend(labels)
+    shuffled_file_path = shuffle_abstract_sentences(file_path)
+    original_data = load_and_process_jsonl(file_path)
+    shuffled_data = load_and_process_jsonl(shuffled_file_path)
+    
+    for doc_id in original_data:
+        if doc_id in shuffled_data:
+            llscore_orig, ppl_orig = original_data[doc_id]
+            llscore_shuf, ppl_shuf = shuffled_data[doc_id]
+            llscore_diff = llscore_shuf - llscore_orig
+            ppl_diff = ppl_shuf - ppl_orig
+            data.append([llscore_orig, ppl_orig, llscore_shuf, ppl_shuf, llscore_diff, ppl_diff])
+            labels.append(label_val)
 
 # 转换为 NumPy 数组
-data = np.array(all_data)
-labels = np.array(all_labels)
+data = np.array(data)
+labels = np.array(labels)
 
 # 划分训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.2, random_state=42, stratify=labels)
 
 # 训练分类器（随机森林）
 clf = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -110,10 +117,10 @@ print(classification_report(y_test, y_pred))
 
 # 绘制分类结果可视化
 plt.figure(figsize=(8, 6))
-plt.scatter(X_test[:, 0], X_test[:, 1], c=y_pred, cmap="coolwarm", alpha=0.7)
-plt.xlabel("LLScore")
-plt.ylabel("PPL")
-plt.title("Classification of Init vs. Generation based on LLScore & PPL")
+plt.scatter(X_test[:, 4], X_test[:, 5], c=y_pred, cmap="coolwarm", alpha=0.7)
+plt.xlabel("LLScore Change")
+plt.ylabel("PPL Change")
+plt.title("Classification of Init vs. Generation based on LLScore & PPL Changes")
 plt.colorbar(label="Predicted Label (0: Init, 1: Generation)")
 plt.savefig("classification_result.svg")
 plt.close()
