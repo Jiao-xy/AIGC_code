@@ -30,8 +30,6 @@ def shuffle_abstract_sentences(file_path):
 # 处理多个JSONL文件
 json_files = [
     "/home/jxy/Data/ieee-init.jsonl", 
-    "/home/jxy/Data/ieee-chatgpt-polish.jsonl", 
-    "/home/jxy/Data/ieee-chatgpt-fusion.jsonl", 
     "/home/jxy/Data/ieee-chatgpt-generation.jsonl"
 ]
 

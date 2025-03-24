@@ -1,11 +1,12 @@
-import json
+import json 
 import torch
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 # 加载 GPT-2 预训练模型
@@ -23,10 +24,6 @@ json_files = {
     "init_random": "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-init_random_llscore_ppl.jsonl",
     "generation_random": "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-chatgpt-generation_random_llscore_ppl.jsonl"
 }
-""" init_file_path = "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-init_llscore_ppl.jsonl"
-generation_file_path = "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-chatgpt-generation_llscore_ppl.jsonl"
-init_random_file_path = "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-init_random_llscore_ppl.jsonl"
-generation_random_file_path = "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-chatgpt-generation_random_llscore_ppl.jsonl" """
 
 # 读取 JSONL 文件
 def load_jsonl(file_path):
@@ -59,12 +56,69 @@ clf.fit(X_train, y_train)
 
 # 预测测试集
 y_pred = clf.predict(X_test)
+y_prob = clf.predict_proba(X_test)[:, 1]  # 获取概率分数
 
 # 计算准确率
 accuracy = accuracy_score(y_test, y_pred)
 print("分类准确率:", accuracy)
+
+# 计算 ROC-AUC
+fpr, tpr, _ = roc_curve(y_test, y_prob)
+roc_auc = auc(fpr, tpr)
+print("AUROC:", roc_auc)
+
+# 计算分类报告
 print("分类报告:")
+report = classification_report(y_test, y_pred, output_dict=True)
 print(classification_report(y_test, y_pred))
+
+# 生成分类指标可视化
+def plot_classification_report(report):
+    categories = list(report.keys())[:-3]  # 过滤掉 'accuracy', 'macro avg', 'weighted avg'
+    precision = [report[c]["precision"] for c in categories]
+    recall = [report[c]["recall"] for c in categories]
+    f1_score = [report[c]["f1-score"] for c in categories]
+    
+    x = np.arange(len(categories))
+    width = 0.25
+    
+    plt.figure(figsize=(8, 6))
+    plt.bar(x - width, precision, width, label="Precision")
+    plt.bar(x, recall, width, label="Recall")
+    plt.bar(x + width, f1_score, width, label="F1-score")
+    
+    plt.xlabel("Categories")
+    plt.ylabel("Score")
+    plt.title("Classification Report Metrics")
+    plt.xticks(ticks=x, labels=categories)
+    plt.legend()
+    plt.savefig("classification_report_metrics.svg")
+    plt.close()
+
+plot_classification_report(report)
+
+# 生成混淆矩阵图像
+conf_matrix = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(6, 5))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['Init', 'Generation'], yticklabels=['Init', 'Generation'])
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.title("Confusion Matrix")
+plt.savefig("confusion_matrix.svg")
+plt.close()
+
+# 绘制 ROC 曲线
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, color='blue', lw=2, label=f'ROC curve (area = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='gray', linestyle='--')
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("Receiver Operating Characteristic (ROC) Curve")
+plt.legend(loc="lower right")
+plt.savefig("roc_curve.svg")
+plt.close()
 
 # 绘制分类结果可视化
 plt.figure(figsize=(8, 6))
