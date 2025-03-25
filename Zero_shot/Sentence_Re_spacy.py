@@ -6,10 +6,10 @@ import random
 nlp = spacy.load("en_core_web_sm")
 
 # **文件路径**
-file_path = "/home/jxy/Data/init/ieee-init.jsonl"
+file_path = "/home/jxy/Data/ReoraganizationData/init/ieee-init.jsonl"
 
 # **控制提取的文本数量**
-num_samples = 10  # 可调整
+num_samples = 100  # 可调整
 
 # **从 JSONL 文件中提取部分文本**
 def extract_samples(file_path, num_samples):

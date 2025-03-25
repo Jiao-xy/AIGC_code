@@ -21,6 +21,52 @@ print(f"Using device: {device}")
 output_dir = "results"
 os.makedirs(output_dir, exist_ok=True)
 
+# 新增以下两个函数（来自之前的代码）
+def analyze_dependencies(sentences):
+    parsed_sentences = []
+    for sent in sentences:
+        doc = nlp(sent)
+        root_count = sum(1 for token in doc if token.dep_ == 'ROOT')
+        subject_count = sum(1 for token in doc if token.dep_ in ['nsubj', 'nsubjpass'])
+        object_count = sum(1 for token in doc if token.dep_ in ['dobj', 'pobj'])
+        tree_depth = max(token.i for token in doc) - min(token.i for token in doc) if len(doc) > 1 else 1
+        parsed_sentences.append((sent, root_count, subject_count, object_count, tree_depth))
+    return parsed_sentences
+
+def reorder_sentences(dependency_parsed):
+    reordered = sorted(
+        dependency_parsed,
+        key=lambda x: (x[1] + x[2] + x[3], -x[4]),
+        reverse=True
+    )
+    return " ".join([sent[0] for sent in reordered])
+
+# 修改数据处理的循环部分
+for file_path, label in [(file_path_human, 1), (file_path_generated, 0)]:
+    with open(file_path, "r", encoding="utf-8") as file:
+        for line in tqdm(file, total=total_lines, desc=f"Processing {file_path}"):
+            data = json.loads(line.strip())
+            abstract = data.get("abstract", "").strip()
+            if abstract:
+                sentences = split_sentences(abstract)
+                
+                # 修改这里开始（原代码：reordered_text = " ".join(sentences)）
+                dependency_parsed = analyze_dependencies(sentences)
+                reordered_text = reorder_sentences(dependency_parsed)
+                # 修改这里结束
+                
+                llscore = compute_llscore(abstract)
+                similarity = compute_bert_similarity(abstract, reordered_text)
+                
+                data_samples.append((llscore, similarity))
+                labels.append(label)
+                processed_data.append({
+                    "original": abstract,
+                    "reordered": reordered_text,
+                    "LLScore": llscore,
+                    "RScore": similarity
+                })
+
 # **类型转换函数（新增）**
 def convert_floats(obj):
     """递归转换numpy和torch类型为Python原生类型"""
@@ -85,8 +131,10 @@ for file_path, label in [(file_path_human, 1), (file_path_generated, 0)]:
             abstract = data.get("abstract", "").strip()
             if abstract:
                 sentences = split_sentences(abstract)
-                reordered_text = " ".join(sentences)
                 
+                # 新代码
+                dependency_parsed = analyze_dependencies(sentences)
+                reordered_text = reorder_sentences(dependency_parsed)
                 # 计算结果时直接使用Python原生类型
                 llscore = compute_llscore(abstract)
                 similarity = compute_bert_similarity(abstract, reordered_text)
