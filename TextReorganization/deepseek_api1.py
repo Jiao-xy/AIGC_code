@@ -1,7 +1,6 @@
-import ollama
+import openai
 import re
 import spacy
-import textstat
 from collections import Counter
 
 # 加载 spaCy 英语模型（用于语法分析）
@@ -18,6 +17,16 @@ test_sentences = [
     "The approach reordered synthesizes similarity log-likelihood and scores derive to composite a establishing metric, effective classification an for threshold discriminating between human-written and texts. LLM-generated",
     "The results experimental our show approach that not effectively only detects but texts LLMgenerated also identifies LLM-polished abstracts, state-of-the-art outperforming current zero-shot detection methods (SOTA)."
 ]
+
+# DeepSeek API 设置
+api_key = ""  # 请替换为你的 API Key
+with open("/home/jxy/Data/deepseek_api_key.txt", "r") as file:
+    api_key = file.readline().strip()  # 读取第一行并去除首尾空格和换行符
+base_url = "https://api.deepseek.com"
+
+# OpenAI 兼容的 API 客户端
+client = openai.OpenAI(api_key=api_key, base_url=base_url)
+model = "deepseek-chat"
 
 # 目标版本数
 num_versions_per_sentence = 3
@@ -37,16 +46,23 @@ for input_text in test_sentences:
         Text: {input_text}
         """
         
-        messages = [
-            {"role": "system", "content": "Only return the reordered sentence. No explanations or extra words."},
-            {"role": "user", "content": prompt}
-        ]
-        
-        response = ollama.chat(model='deepseek-r1:7b', messages=messages)
-        generated_text = response.get('message', {}).get('content', '').strip()
-        cleaned_text = re.sub(r'<think>.*?</think>', '', generated_text, flags=re.DOTALL).strip()
-        cleaned_text = cleaned_text.replace("\n", " ")
-        
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "Only return the reordered sentence. No explanations or extra words."},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.5,
+            max_tokens=150,
+            stream=False
+        )
+
+        if response.choices:
+            generated_text = response.choices[0].message.content.strip()
+        else:
+            print("❌ API 未返回有效数据，跳过")
+            continue
+
         def is_valid_sentence(sentence):
             doc = nlp(sentence)
             if len(doc) < 5 or not any(token.dep_ == "ROOT" for token in doc):
@@ -60,11 +76,11 @@ for input_text in test_sentences:
             
             return True
 
-        if not is_valid_sentence(cleaned_text):
+        if not is_valid_sentence(generated_text):
             continue
         
-        collected_sentences[input_text].append(cleaned_text)
-        print(f"✅ 句子通过: {cleaned_text}")
+        collected_sentences[input_text].append(generated_text)
+        print(f"✅ 句子通过: {generated_text}")
 
 print("\n🔹 最终生成的句子：")
 for original, variations in collected_sentences.items():
