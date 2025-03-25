@@ -4,7 +4,6 @@ import numpy as np
 import spacy
 import torch
 import matplotlib.pyplot as plt
-import pickle
 from tqdm import tqdm
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from sentence_transformers import SentenceTransformer
@@ -21,14 +20,14 @@ print(f"Using device: {device}")
 output_dir = "results"
 os.makedirs(output_dir, exist_ok=True)
 
-# **加载 GPT-2 预训练模型（启用 GPU）**
+# **加载 GPT-2 预训练模型（用于计算 LLScore）**
 model_name = "gpt2-medium"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
 model = GPT2LMHeadModel.from_pretrained(model_name).to(device)
 model.eval()
 tokenizer.pad_token = tokenizer.eos_token
 
-# **加载 SpaCy 和 BERT（启用 GPU）**
+# **加载 SpaCy 和 BERT（用于计算 RScore）**
 nlp = spacy.load("en_core_web_sm")
 bert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2', device=device)
 
@@ -36,56 +35,43 @@ bert_model = SentenceTransformer('paraphrase-MiniLM-L6-v2', device=device)
 file_path_human = "/home/jxy/Data/ReoraganizationData/init/ieee-init.jsonl"
 file_path_generated = "/home/jxy/Data/ReoraganizationData/init/ieee-chatgpt-generation.jsonl"
 
-print("开始处理数据...")
-
 # **文本分割**
 def split_sentences(text):
     doc = nlp(text)
     return [sent.text for sent in doc.sents]
 
-# **计算 LLScore（启用 GPU）**
+# **计算 LLScore（在 GPU 运行）**
 def compute_llscore(text):
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
     with torch.no_grad():
         outputs = model(**inputs, labels=inputs["input_ids"])
     return -outputs.loss.cpu().item() * inputs.input_ids.shape[1]
 
-# **计算 BERT 余弦相似度（启用 GPU）**
+# **计算 BERT 余弦相似度（在 GPU 运行）**
 def compute_bert_similarity(original, reordered):
     vec_orig = bert_model.encode([original], convert_to_tensor=True, device=device)
     vec_reorder = bert_model.encode([reordered], convert_to_tensor=True, device=device)
     return cosine_similarity(vec_orig.cpu().numpy(), vec_reorder.cpu().numpy())[0, 0]
 
-# **处理数据**
-data_samples = []
-labels = []
-processed_data = []
-total_lines = sum(1 for _ in open(file_path_human, "r", encoding="utf-8")) + sum(1 for _ in open(file_path_generated, "r", encoding="utf-8"))
-
-for file_path, label in [(file_path_human, 1), (file_path_generated, 0)]:
+# **加载数据（仅取十分之一数据进行测试）**
+def load_jsonl(file_path, limit=None):
     with open(file_path, "r", encoding="utf-8") as file:
-        for line in tqdm(file, total=total_lines, desc=f"Processing {file_path}"):
-            data = json.loads(line.strip())
-            abstract = data.get("abstract", "").strip()
-            if abstract:
-                sentences = split_sentences(abstract)
-                reordered_text = " ".join(sentences)  # 保持所有句子完整
-                llscore = compute_llscore(abstract)
-                similarity = compute_bert_similarity(abstract, reordered_text)
-                data_samples.append((llscore, similarity))
-                labels.append(label)
-                processed_data.append({"original": abstract, "reordered": reordered_text, "LLScore": llscore, "RScore": similarity})
+        return [json.loads(line.strip()) for i, line in enumerate(file) if limit is None or i < limit]
 
-# **保存中间数据**
-with open(os.path.join(output_dir, "processed_data.json"), "w", encoding="utf-8") as f:
-    json.dump(processed_data, f, ensure_ascii=False, indent=4)
-print("中间数据已保存至 results/processed_data.json")
+limit = 10000  # 只处理前 500 条数据
+print(f"仅处理前 {limit} 条数据进行测试...")
+data_human = load_jsonl(file_path_human, limit=limit)
+data_generated = load_jsonl(file_path_generated, limit=limit)
 
-print("数据处理完成，开始分类分析...")
+# **处理数据**
+all_texts = [item["abstract"] for item in data_human + data_generated]
+print("计算 LLScore 和 RScore...")
+llscores = [compute_llscore(text) for text in tqdm(all_texts, desc="Computing LLScore")]
+rscores = [compute_bert_similarity(text, " ".join(split_sentences(text)[:5])) for text in tqdm(all_texts, desc="Computing RScore")]
 
-# **转换数据格式**
-data_samples = np.array(data_samples)
-labels = np.array(labels)
+# **存储数据**
+data_samples = np.column_stack((llscores, rscores))
+labels = np.array([1] * len(data_human) + [0] * len(data_generated))
 
 # **划分训练集和测试集**
 X_train, X_test, y_train, y_test = train_test_split(data_samples, labels, test_size=0.2, random_state=42)
@@ -94,12 +80,6 @@ print("数据划分完成，训练集大小: {}，测试集大小: {}".format(le
 # **训练逻辑回归模型**
 clf = LogisticRegression()
 clf.fit(X_train, y_train)
-
-# **保存逻辑回归模型的权重**
-p_weights = clf.coef_.tolist()
-with open(os.path.join(output_dir, "p_weights.json"), "w", encoding="utf-8") as f:
-    json.dump(p_weights, f, ensure_ascii=False, indent=4)
-print("逻辑回归权重 p 已保存至 results/p_weights.json")
 
 # **测试集分类预测**
 y_pred_test = clf.predict(X_test)
