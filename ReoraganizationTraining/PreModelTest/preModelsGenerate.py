@@ -29,25 +29,51 @@ test_sentences = [
     "The results experimental our show approach that not effectively only detects but texts LLMgenerated also identifies LLM-polished abstracts, state-of-the-art outperforming current zero-shot detection methods (SOTA)."
 ]
 
-# **5️⃣ 句子重组函数（单句处理）**
-def reorder_sentence(model, tokenizer, sentence):
+# **5️⃣ 句子重组函数（支持三种模式）**
+def reorder_sentence(model, tokenizer, sentence, mode="beam_search"):
     input_text = f"reorder: {sentence}"
     inputs_encodings = tokenizer(
         input_text, return_tensors="pt", truncation=True, max_length=128
     ).to("cuda" if torch.cuda.is_available() else "cpu")
 
     with torch.no_grad():
-        outputs = model.generate(
-            input_ids=inputs_encodings.input_ids,
-            attention_mask=inputs_encodings.attention_mask,
-            max_length=128,
-            num_return_sequences=1,
-            do_sample=True,  # 确保 `temperature` 和 `top_p` 生效
-            temperature=0.7,
-            top_k=50,
-            top_p=0.95,
-        )
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+        if mode == "beam_search":
+            output_ids = model.generate(
+                input_ids=inputs_encodings.input_ids,
+                attention_mask=inputs_encodings.attention_mask,
+                max_length=128,
+                num_beams=8,
+                repetition_penalty=1.5,
+                length_penalty=0.8,
+                early_stopping=True,
+            )
+        elif mode == "sampling":
+            output_ids = model.generate(
+                input_ids=inputs_encodings.input_ids,
+                attention_mask=inputs_encodings.attention_mask,
+                max_length=128,
+                do_sample=True,
+                temperature=0.7,
+                top_k=50,
+                top_p=0.95,
+            )
+        elif mode == "beam_sampling":
+            output_ids = model.generate(
+                input_ids=inputs_encodings.input_ids,
+                attention_mask=inputs_encodings.attention_mask,
+                max_length=128,
+                num_beams=5,
+                do_sample=True,
+                temperature=0.7,
+                top_k=50,
+                top_p=0.95,
+                repetition_penalty=1.5,
+                length_penalty=0.8,
+            )
+        else:
+            raise ValueError("Invalid mode. Choose from 'beam_search', 'sampling', or 'beam_sampling'")
+
+    return tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
 # **6️⃣ 遍历多个模型并重组句子**
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -55,6 +81,8 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"\n📌 共找到 {len(model_versions)} 个训练好的模型:\n")
 for model_version in model_versions:
     print(f" - {model_version}")
+
+modes = ["beam_search", "sampling", "beam_sampling"]
 
 for model_version in model_versions:
     model_path = os.path.join(models_dir, model_version)
@@ -68,12 +96,15 @@ for model_version in model_versions:
     model = T5ForConditionalGeneration.from_pretrained(model_path).to(device)
 
     print(f"\n🔹 模型: {model_version}")
-    for i, original in enumerate(test_sentences):
-        reordered = reorder_sentence(model, tokenizer, original)
-        print(f"【句子 {i+1}】✅重组后: {reordered}\n")
+    for mode in modes:
+        print(f"\n🔹 生成模式: {mode}")
+        for i, original in enumerate(test_sentences):
+            reordered = reorder_sentence(model, tokenizer, original, mode=mode)
+            print(f"【句子 {i+1}】✅重组后: {reordered}\n")
 
     del model
     torch.cuda.empty_cache()
+
 
 """
 With the rapid advancement of large language model (LLM) technology, particularly with the emergence of advanced models like ChatGPT, distinguishing between LLM-generated and human-written texts has become increasingly challenging. 

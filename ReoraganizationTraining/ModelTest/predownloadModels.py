@@ -7,7 +7,7 @@ AutoModelForSeq2SeqLM.from_pretrained("t5-base")
 AutoTokenizer.from_pretrained("facebook/bart-large")
 AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large")
 
-AutoTokenizer.from_pretrained("google/ul2")
-AutoModelForSeq2SeqLM.from_pretrained("google/ul2")
+""" AutoTokenizer.from_pretrained("google/ul2")
+AutoModelForSeq2SeqLM.from_pretrained("google/ul2") """
 
 print("✅ 所有模型已下载（存入缓存），但没有加载进显存！")
