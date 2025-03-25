@@ -21,6 +21,20 @@ print(f"Using device: {device}")
 output_dir = "results"
 os.makedirs(output_dir, exist_ok=True)
 
+# **类型转换函数（新增）**
+def convert_floats(obj):
+    """递归转换numpy和torch类型为Python原生类型"""
+    if isinstance(obj, np.generic):
+        return obj.item()
+    elif isinstance(obj, torch.Tensor):
+        return obj.cpu().item()
+    elif isinstance(obj, dict):
+        return {k: convert_floats(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_floats(elem) for elem in obj]
+    else:
+        return obj
+
 # **加载 GPT-2 预训练模型（启用 GPU）**
 model_name = "gpt2-medium"
 tokenizer = GPT2Tokenizer.from_pretrained(model_name)
@@ -48,13 +62,15 @@ def compute_llscore(text):
     inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
     with torch.no_grad():
         outputs = model(**inputs, labels=inputs["input_ids"])
-    return -outputs.loss.cpu().item() * inputs.input_ids.shape[1]
+    # 确保返回Python float类型（修改）
+    return float(-outputs.loss.item() * inputs.input_ids.shape[1])
 
 # **计算 BERT 余弦相似度（启用 GPU）**
 def compute_bert_similarity(original, reordered):
     vec_orig = bert_model.encode([original], convert_to_tensor=True, device=device)
     vec_reorder = bert_model.encode([reordered], convert_to_tensor=True, device=device)
-    return cosine_similarity(vec_orig.cpu().numpy(), vec_reorder.cpu().numpy())[0, 0]
+    # 显式转换为Python float（新增）
+    return float(cosine_similarity(vec_orig.cpu().numpy(), vec_reorder.cpu().numpy())[0, 0])
 
 # **处理数据**
 data_samples = []
@@ -69,17 +85,26 @@ for file_path, label in [(file_path_human, 1), (file_path_generated, 0)]:
             abstract = data.get("abstract", "").strip()
             if abstract:
                 sentences = split_sentences(abstract)
-                reordered_text = " ".join(sentences)  # 保持所有句子完整
+                reordered_text = " ".join(sentences)
+                
+                # 计算结果时直接使用Python原生类型
                 llscore = compute_llscore(abstract)
                 similarity = compute_bert_similarity(abstract, reordered_text)
+                
                 data_samples.append((llscore, similarity))
                 labels.append(label)
-                processed_data.append({"original": abstract, "reordered": reordered_text, "LLScore": llscore, "RScore": similarity})
+                processed_data.append({
+                    "original": abstract,
+                    "reordered": reordered_text,
+                    "LLScore": llscore,
+                    "RScore": similarity
+                })
 
-# **保存中间数据**
+# **保存中间数据（添加类型转换）**
 with open(os.path.join(output_dir, "processed_data.json"), "w", encoding="utf-8") as f:
-    json.dump(processed_data, f, ensure_ascii=False, indent=4)
+    json.dump(convert_floats(processed_data), f, ensure_ascii=False, indent=4)  # 应用类型转换
 print("中间数据已保存至 results/processed_data.json")
+
 
 print("数据处理完成，开始分类分析...")
 
