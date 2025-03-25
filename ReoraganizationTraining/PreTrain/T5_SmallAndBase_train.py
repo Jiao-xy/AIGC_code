@@ -138,7 +138,8 @@ def train_model(model_name, dataset_key, version_name):
     print(f"📁 评估结果已保存至 {eval_results_path}")
 
 # **5️⃣ 训练所有版本的模型**
-for model_key, model_name in model_names.items():
+""" for model_key, model_name in model_names.items():
     for dataset_key in dataset_files.keys():
         version_name = f"{model_key}_{dataset_key}"
-        train_model(model_name, dataset_key, version_name)
+        train_model(model_name, dataset_key, version_name) """
+train_model("t5-base", "reorder","t5-base_reorder")
