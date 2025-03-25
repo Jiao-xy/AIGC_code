@@ -7,11 +7,9 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from sentence_transformers import SentenceTransformer
-from sklearn.linear_model import LogisticRegression
 from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_curve, auc
-from sklearn.model_selection import train_test_split
-import joblib
+from sklearn.metrics import roc_curve, auc
+from scipy.optimize import minimize
 
 # **设置 GPU 设备**
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -54,6 +52,11 @@ def compute_bert_similarity(original, reordered):
     vec_reorder = bert_model.encode([reordered], convert_to_tensor=True, device=device)
     return cosine_similarity(vec_orig.cpu().numpy(), vec_reorder.cpu().numpy())[0, 0]
 
+# **Softmax 归一化**
+def softmax(x):
+    exp_x = np.exp(x - np.max(x))
+    return exp_x / exp_x.sum()
+
 # **依存分析并重排序文本**
 def analyze_dependencies(sentences):
     parsed_sentences = []
@@ -74,7 +77,7 @@ def reorder_sentences(dependency_parsed):
     )
     return " ".join([sent[0] for sent in reordered])
 
-# **加载数据（仅取十分之一数据进行测试）**
+# **加载数据**
 def load_jsonl(file_path, limit=None):
     with open(file_path, "r", encoding="utf-8") as file:
         return [json.loads(line.strip()) for i, line in enumerate(file) if limit is None or i < limit]
@@ -90,33 +93,38 @@ print("计算 LLScore 和 RScore...")
 llscores = [compute_llscore(text) for text in tqdm(all_texts, desc="Computing LLScore")]
 
 # **计算重排序相似度**
-rscores = []
 r_reorder_scores = []
-for text in tqdm(all_texts, desc="Computing RScore & Reordered RScore"):
+for text in tqdm(all_texts, desc="Computing Reordered RScore"):
     sentences = split_sentences(text)
     dependency_parsed = analyze_dependencies(sentences)
     reordered_text = reorder_sentences(dependency_parsed)
-    rscore = compute_bert_similarity(text, " ".join(sentences[:5]))
     r_reorder_score = compute_bert_similarity(text, reordered_text)
-    rscores.append(rscore)
     r_reorder_scores.append(r_reorder_score)
 
-# **存储数据**
-data_samples = np.column_stack((llscores, rscores, r_reorder_scores))
-labels = np.array([1] * len(data_human) + [0] * len(data_generated))
-np.save(os.path.join(output_dir, "data_samples.npy"), data_samples)
-np.save(os.path.join(output_dir, "labels.npy"), labels)
+# **Softmax 归一化 RScore**
+r_reorder_scores = softmax(np.array(r_reorder_scores))
 
-# **划分训练集和测试集**
-X_train, X_test, y_train, y_test = train_test_split(data_samples, labels, test_size=0.2, random_state=42)
+# **优化权重 p**
+def optimize_p(p):
+    total_scores = p * r_reorder_scores + (1 - p) * np.array(llscores)
+    epsilon = np.percentile(total_scores, 50)
+    predictions = (total_scores > epsilon).astype(int)
+    return -np.mean(predictions == np.array([1] * len(data_human) + [0] * len(data_generated)))
 
-# **训练逻辑回归模型**
-clf = LogisticRegression()
-clf.fit(X_train, y_train)
+result = minimize(optimize_p, x0=0.5, bounds=[(0, 1)], method='L-BFGS-B')
+p_optimized = result.x[0]
+print(f"优化后的 p 值: {p_optimized}")
+
+# **计算 TotalScore**
+total_scores = p_optimized * r_reorder_scores + (1 - p_optimized) * np.array(llscores)
+
+# **确定分类阈值**
+epsilon = np.percentile(total_scores, 50)
+y_pred = (total_scores > epsilon).astype(int)
+y_true = np.array([1] * len(data_human) + [0] * len(data_generated))
 
 # **计算 ROC 曲线**
-y_pred_prob = clf.predict_proba(X_test)[:, 1]
-fpr, tpr, _ = roc_curve(y_test, y_pred_prob)
+fpr, tpr, _ = roc_curve(y_true, total_scores)
 roc_auc = auc(fpr, tpr)
 
 # **绘制并保存 ROC 曲线**
