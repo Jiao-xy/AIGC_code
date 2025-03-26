@@ -31,7 +31,7 @@ min_similarity_char, worst_text_char = float("inf"), ""
 min_similarity_word, worst_text_word = float("inf"), ""
 n=0
 # 5. 进行 1000 次打乱实验
-for _ in range(1000):
+for _ in range(100):
     # 按字打乱
     chars = list(original_text)
     random.shuffle(chars)
