@@ -4,8 +4,8 @@ import os
 import matplotlib.pyplot as plt
 
 # **文件路径**
-original_file = "/home/jxy/Data/ieee-init_llscore_ppl.jsonl"
-randomized_file = "/home/jxy/Data/ieee-init_random_llscore_ppl.jsonl"
+original_file = "/home/jxy/Data/Zero_shot/llscore_ppl/ieee-init_llscore_ppl.jsonl"
+randomized_file = "/home/jxy/Data/Zero_shot/llscore_ppl_random/ieee-init_random_llscore_ppl.jsonl"
 
 # **读取 JSONL 文件并转换为字典**
 def read_jsonl(file_path):

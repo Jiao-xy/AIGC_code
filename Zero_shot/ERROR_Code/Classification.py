@@ -1,14 +1,14 @@
+#问题：并没有进行重排操作
+
+
 import json
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-import spacy
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.metrics import accuracy_score, precision_recall_fscore_support, roc_curve, auc
 from sklearn.model_selection import train_test_split
 
-# **加载 SpaCy 进行依存分析**
-nlp = spacy.load("en_core_web_sm")
+
 
 # **文件路径**
 file_pairs = [
