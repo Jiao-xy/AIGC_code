@@ -18,7 +18,7 @@ def get_trained_models(models_dir):
 model_versions = get_trained_models(models_dir)
 
 # **4️⃣ 需要重组的句子**
-test_sentences = [
+""" test_sentences = [
     "The rapid advancement of language large (LLM) model particularly technology, ChatGPT, the distinguishing emergence between of and texts models advanced like human-written LLM-generated has increasingly challenging. become",
     "This phenomenon unprecedented challenges presents academic authenticity, to integrity and making of detection a LLM-generated pressing research. concern in scientific",
     "To effectively and detect accurately generated LLMs, by this constructs study a comprehensive dataset of medical paper introductions, both encompassing human-written and LLM-generated content.",
@@ -27,6 +27,13 @@ test_sentences = [
     "Specifically, reorders this original method text using dependency trees, parse calculates the similarity (Rscore) score between reordered the text and original, the integrates and log-likelihood as features metrics. auxiliary",
     "The approach reordered synthesizes similarity log-likelihood and scores derive to composite a establishing metric, effective classification an for threshold discriminating between human-written and texts. LLM-generated",
     "The results experimental our show approach that not effectively only detects but texts LLMgenerated also identifies LLM-polished abstracts, state-of-the-art outperforming current zero-shot detection methods (SOTA)."
+] """
+test_sentences=shuffled_sentences = [
+    "optimal models, CNNs, Deep in constraints like regularization, such performance. optimization depth, are network of for and as text but GNNs, classification efficient require highly learning RNNs, rate technical layer learning and",
+    "lies significant in can enhancing model robustness adversarial against which samples, challenge significantly A efficacy. reduce",
+    "precise designing in deep applications models for theories. Although semantic extraction (DNNs) diverse excel of a deeper requires networks underlying mining, and neural feature understanding",
+    "interpretability the to the for an optimization and due unexplainable way deep learn. model often guidelines remains lack in of which challenge ongoing performance Improving clear learning and models",
+    "for their learning critical advances, deep models robust application acceptance. and As research will be and creating broader transparent more"
 ]
 
 # **5️⃣ 句子重组函数（支持三种模式）**
@@ -116,3 +123,10 @@ Specifically, this method reorders the original text using dependency parse tree
 The approach synthesizes the reordered similarity and log-likelihood scores to derive a composite metric, establishing an effective classification threshold for discriminating between human-written and LLM-generated texts. 
 The experimental results show that our approach not only effectively detects LLMgenerated texts but also identifies LLM-polished abstracts, outperforming current state-of-the-art zero-shot detection methods (SOTA).
 """
+sentences = [
+    "Deep learning models, such as CNNs, RNNs, and GNNs, are highly efficient in text classification but require optimization of technical constraints like layer depth, regularization, and network learning rate for optimal performance.",
+    "A significant challenge lies in enhancing model robustness against adversarial samples, which can significantly reduce efficacy.",
+    "Although deep neural networks (DNNs) excel in feature extraction and semantic mining, designing precise models for diverse applications requires a deeper understanding of underlying theories.",
+    "Improving model performance and interpretability remains an ongoing challenge due to the lack of clear guidelines for optimization and the often unexplainable way in which deep learning models learn.",
+    "As research advances, creating more robust and transparent deep learning models will be critical for their broader application and acceptance."
+]
