@@ -123,10 +123,11 @@ Specifically, this method reorders the original text using dependency parse tree
 The approach synthesizes the reordered similarity and log-likelihood scores to derive a composite metric, establishing an effective classification threshold for discriminating between human-written and LLM-generated texts. 
 The experimental results show that our approach not only effectively detects LLMgenerated texts but also identifies LLM-polished abstracts, outperforming current state-of-the-art zero-shot detection methods (SOTA).
 """
-sentences = [
+""" sentences = [
     "Deep learning models, such as CNNs, RNNs, and GNNs, are highly efficient in text classification but require optimization of technical constraints like layer depth, regularization, and network learning rate for optimal performance.",
     "A significant challenge lies in enhancing model robustness against adversarial samples, which can significantly reduce efficacy.",
     "Although deep neural networks (DNNs) excel in feature extraction and semantic mining, designing precise models for diverse applications requires a deeper understanding of underlying theories.",
     "Improving model performance and interpretability remains an ongoing challenge due to the lack of clear guidelines for optimization and the often unexplainable way in which deep learning models learn.",
     "As research advances, creating more robust and transparent deep learning models will be critical for their broader application and acceptance."
 ]
+ """
