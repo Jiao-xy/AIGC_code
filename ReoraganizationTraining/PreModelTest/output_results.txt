@@ -1,0 +1,829 @@
+📌 共找到 12 个训练好的模型:
+ - t5-base_tau_08_100
+ - t5-base_tau_08_30
+ - t5-base_tau_08_50
+ - t5-base_tau_08_80
+ - t5-small_reorder_100
+ - t5-small_reorder_30
+ - t5-small_reorder_50
+ - t5-small_reorder_80
+ - t5-small_tau_08_100
+ - t5-small_tau_08_30
+ - t5-small_tau_08_50
+ - t5-small_tau_08_80
+
+🔹 模型: t5-base_tau_08_100
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside the watching birds, bathed its fur as golden light in light making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon of a oak tree he spent, reading novel in the completely lost world story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a notebook in her bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, whatever where she is.
+【句子 5】✅ 重组后: the bright stars in a clear sky, ancient constellations forming stories told while the distant night breeze carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over all the coffee cup the he just placed had a warm wind knocked his unfinished manuscript onto the sudden liquid of spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing sound music for an audience of the street strangers.
+【句子 8】✅ 重组后: the book found in a dusty photograph in an old library grandfather’s front pages showing a vintage car of a couple standing before, never had he seen smiling.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden butterflies chasing playfully fluttered around her that shimmering their wings in delicate.
+【句子 10】✅ 重组后: he just wanted to send an important message about his died as battery leaving his phone desperately cluttered for searching a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from the oven loaves filled with hot scent from the baker.
+【句子 12】✅ 重组后: she practiced perfect melody for the evening hours, determined every evening gracefully through the piano as gliding notes fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: the rocks, jagged against the seagulls, soared mist into the salty ocean air above sending their rhythmic cries with the blending sound.
+【句子 14】✅ 重组后: no return sealed in wax red envelope with a cryptic message made inside her mysterious the heart arrived in the race excitement and curiosity, a mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep midnight a silent sound of the old house struck through the gears as its slowly ancient clock turning spine echoed his sending shivers.
+【句子 16】✅ 重组后: blank canvas stared at his blank hours, waiting for inspiration, waiting to hesitantly bring the first stroke for the vision hovering in paintbrush.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged its jumping owner with its happiness, up at the sight of full eyes and love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged by them as mischief and trust of the moment shared their strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians crowd playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: deep took stage, before breath onto a heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside as the watching birds bathed its fur as golden light in, making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree he spent time, reading novel of the completely lost world story, under unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries her notebook in a bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, whatever where she is.
+【句子 5】✅ 重组后: the bright stars in the clear sky, ancient constellations forming stories told while cool breeze carried the crashing of waves distant crashing sound on shore.
+【句子 6】✅ 重组后: over the coffee cup the he just placed had a warm wind knocked his manuscript unfinished, all over the sudden liquid spilling onto ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for the audience of the pedestrians.
+【句子 8】✅ 重组后: book the dusty in a dusty photograph found in an old library grandfather’s old pages showing a vintage car of a couple standing in front, never had he seen smiling before.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden butterflies chasing playfully fluttered around her chasing their wings shimmering in delicate.
+【句子 10】✅ 重组后: just leaving his phone to send an important message about he died as battery was desperately cluttered for his searching a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the kitchen filled with freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from the oven loaves smell of hot the baker.
+【句子 12】✅ 重组后: she practiced perfect melody for the evening hours, determined each evening gracefully through the piano as she gliding notes through fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: the rocks, jagged against the waves, seagulls soared high into the salty ocean air, sending their rhythmic cries into the mist blending with sound.
+【句子 14】✅ 重组后: no return made in wax red envelope with a cryptic message in the heart her mysterious address inside arrived in the race excitement and curiosity, no mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep midnight the old gears sound of the house silently struck through as its slowly ancient clock turning spine echoed his sending shivers.
+【句子 16】✅ 重组后: blank canvas stared at his blank hours, waiting for inspiration, waiting for the hovering to bring the first stroke for vision vision in life.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged its jumping owner with its happiness, up at the sight of full eyes and love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged by them as mischief and trust of a moment shared the they strengthened their friendship.
+【句子 19】✅ 重组后: the evening festival lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food crowd and cheerful tunes.
+【句子 20】✅ 重组后: deep breath, before stepping onto a stage his heart pounding moment, chest in his spotlight illuminated, before him and stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside the watching birds, bathed its fur as golden light in light making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon of a oak tree he spent, reading novel in the completely lost world story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a notebook in her bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, whatever where she is.
+【句子 5】✅ 重组后: the bright stars in a clear sky, ancient constellations forming stories told while the distant night breeze carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over all the coffee cup the he just placed had a warm wind knocked his manuscript unfinished over the sudden liquid of spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing sound music for an audience of the street strangers.
+【句子 8】✅ 重组后: the book found in a dusty photograph in an old library grandfather’s front pages showing a vintage car of a couple standing before, never had he seen smiling.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden butterflies chasing playfully fluttered around her chasing their delicate wings shimmering in sunlight.
+【句子 10】✅ 重组后: he just wanted to send an important message about his died as battery leaving his phone desperately cluttered for searching a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from the oven loaves filled with hot scent from the baker.
+【句子 12】✅ 重组后: she practiced perfect melody for the evening hours, determined every evening gracefully through the piano as she gliding notes through fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: the rocks, jagged against the seagulls, soared mist into the salty ocean air above sending their rhythmic cries with the blending sound.
+【句子 14】✅ 重组后: no return sealed in wax red envelope with a cryptic message made inside her mysterious the heart arrived in the race excitement and curiosity, a mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep midnight a silent sound of the old house struck through the gears as its slowly ancient clock turning spine echoed his sending shivers.
+【句子 16】✅ 重组后: blank canvas stared at his blank hours, waiting for inspiration, waiting to hesitantly bring the first stroke for the vision hovering in paintbrush.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged its jumping owner with its happiness, up at the sight of full eyes and love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged by them as mischief and trust of a moment shared the they strengthened their friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians crowd playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: deep took stage, before breath onto a heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 模型: t5-base_tau_08_30
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill jumped onto the jumped cat, and the birds watching outside bathed its morning as golden light in fur making it warm feel cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree spent, reading novel of the completely lost world story, unaware of the gentle rustled leaves that he leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled with the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries her notebook in a small bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: bright stars in a clear sky, ancient constellations forming stories told while the distant night carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over coffee of the cup he had just placed had a warm sudden knocked his manuscript onto all the unfinished liquid the spilling, ink smudging.
+【句子 7】✅ 重组后: The city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and sound playing musicians for the street audience of the strangers.
+【句子 8】✅ 重组后: the dusty in a photograph, found an old library book between his grandfather’s front pages showing a vintage car of a couple standing before, never had he seen smiling.
+【句子 9】✅ 重组后: she laughed pure joy across the garden, chasing tiny butterflies that playfully fluttered around her as shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: Just as his phone was cluttered to send an important message about he died as battery leaving his desperately searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the freshly baked bread filled with the scent of everyone’s golden stomach growl hunger as carefully pulled from oven loaves making hot kitchen the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the hours, determined every evening as she gracefully practiced through the piano gliding notes through empty fingers over the echoed keys house.
+【句子 13】✅ 重组后: rocks, jagged against the mist waves, crashed the seagulls soared into the salty ocean air, sending their rhythmic cries above with blending the sound.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic heart message made in the mysterious letter inside arrived in the race excitement and curiosity, address mail.
+【句子 15】✅ 重组后: The hallway chime struck through the deep resonant old gears sound of his house sending silent shivers as its slowly ancient clock turning spine slowly echoed the midnight.
+【句子 16】✅ 重组后: blank stared for hours, searched for paintbrush inspiration, hovering to hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail wagged at the sight of its jumping owner, returning home pure happiness, up with love its full eyes and excitement.
+【句子 18】✅ 重组后: whispered into her best giggling softly knowing glances exchanged their secret as mischief and trust of moment shared by the strengthened friendship they.
+【句子 19】✅ 重组后: the evening crowd swaying lanterns filled with gently breeze, vibrant stalls selling colorful street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: took stage, before breath onto a deep heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill, the jumped cat and the birds outside watching the morning bathed its fur as golden light in fur making it warm feel cozy.
+【句子 2】✅ 重组后: old man under a oak tree spent the afternoon, reading novel of the completely lost world story, in unaware gentle rustled that leaves the breeze above him.
+【句子 3】✅ 重组后: the train arrived late but seemed to mind since no one was filled to the train station, travelers engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: She carries a small notebook in her bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: bright stars forming in the clear sky, ancient constellations telling stories carried by a cool night breeze the crashing of waves while distant sound on shore.
+【句子 6】✅ 重组后: over the coffee cup of coffee he just placed had knocked a warm sudden wind on his unfinished manuscript all the liquid over spilling, ink smudging.
+【句子 7】✅ 重组后: The city was alive with bright neon lights, honking chatter of the pedestrians, distant cars, and playing music for the sound audience of the street strangers.
+【句子 8】✅ 重组后: The dusty book in a photograph of an old library found between his grandfather’s old pages showing a vintage book front in a standing car, never had he couple smiling before.
+【句子 9】✅ 重组后: little joy that she laughed pure as pure sunlight, ran across the garden butterflies chasing playfully that fluttered around her chasing their wings shimmering delicately.
+【句子 10】✅ 重组后: Just as his phone was desperate to send an important message about he died as battery leaving his phone was cluttered searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the hot bread baked freshly making smell of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves filled the kitchen of the baker.
+【句子 12】✅ 重组后: she determined for melody perfect the hours, determined every evening for the piano house gracefully as she gliding through notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: rocks, jagged against the waves, crashed the seagulls soared above the salty ocean air, sending their rhythmic cries to blending the mist sound.
+【句子 14】✅ 重组后: no return sealed wax red envelope with cryptic heart message made in a race letter, the mysterious contents arrived in the heart excitement and curiosity of the mail.
+【句子 15】✅ 重组后: The hallway chime struck through a deep resonant sound of old gears sending silent shivers, as its slowly ancient clock turning spine slowly echoed through the house.
+【句子 16】✅ 重组后: blank stared at his searched hours for paintbrush inspiration, hovering to hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail, returning its pure sight excitement at the jumping owner of down home happiness, wagged up with love its full eyes and eyes.
+【句子 18】✅ 重组后: whispered into her best giggling softly knowing glances exchanged as they shared their mischief and trust of moment by a strengthened friendship secret.
+【句子 19】✅ 重组后: the evening lanterns swaying for the street filled with gently breeze, vibrant stalls selling street delicious music, crowd playing colorful and lively food, colorful tunes festival.
+【句子 20】✅ 重组后: before stepping onto stage, before breath into a deep heart pounding moment, stepping into his spotlight, illuminated his chest and stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill jumped onto the jumped cat, outside watching birds and bathed the morning as golden light in fur making it feel warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree spent, reading novel of the completely lost world story, unaware of the gentle rustled leaves that he leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled with the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries her notebook in a small bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: bright stars in a clear sky, ancient constellations forming stories told while the distant night carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over coffee of the cup he had just placed had a warm sudden knocked his manuscript onto all the unfinished liquid the spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing sound music for the audience of the street strangers.
+【句子 8】✅ 重组后: the dusty in a photograph, found an old library book between his grandfather’s front pages showing a vintage car of a couple standing before, never had he seen smiling.
+【句子 9】✅ 重组后: she laughed pure joy across the garden, chasing tiny butterflies that playfully fluttered around her as shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: Just as his phone was cluttered to send an important message about he died as battery leaving his desperately searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the freshly baked bread filled with the scent of everyone’s golden stomach growl hunger as carefully pulled from oven loaves making hot kitchen the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the hours, determined every evening as she gracefully practiced through the piano gliding notes through empty fingers over the echoed keys house.
+【句子 13】✅ 重组后: rocks, jagged against the mist waves, crashed the seagulls soared into the salty ocean air, sending their rhythmic cries above with blending the sound.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic heart message made in the mysterious letter inside arrived in the race excitement and curiosity, address mail.
+【句子 15】✅ 重组后: The hallway chime struck through the deep resonant old gears sound of his house sending silent shivers as its slowly ancient clock turning spine slowly echoed the midnight.
+【句子 16】✅ 重组后: blank stared for hours, searched for paintbrush inspiration, hovering to hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail wagged at the sight of its jumping owner, returning home pure happiness, up with love its full eyes and excitement.
+【句子 18】✅ 重组后: whispered into her best giggling softly knowing glances exchanged their secret as mischief and trust of moment shared by the strengthened friendship they.
+【句子 19】✅ 重组后: the evening crowd swaying lanterns filled with gently breeze, vibrant stalls selling colorful street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: took stage, before breath onto a deep heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 模型: t5-base_tau_08_50
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill as the morning cat jumped onto the outside birds watching, bathed its fur as golden light in the making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree spent, reading novel of the completely lost world story, unaware of the gentle breeze that rustled the leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a notebook in her bag to jot down thoughts, random sketches or even whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: bright stars in a clear sky, ancient constellations forming stories told while the cool breeze carried the crashing of waves distant crashing sound on shore.
+【句子 6】✅ 重组后: over coffee of the cup he just placed had the sudden warm wind knocked his manuscript onto all the unfinished liquid, spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing sound music for the street audience of strangers.
+【句子 8】✅ 重组后: the book in a dusty photograph found between his grandfather’s old library pages showing a vintage couple of front in standing before, never had he seen a smiling car.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her that shimmering their wings in sunlight.
+【句子 10】✅ 重组后: just as his phone was cluttered to send important message about he died as battery leaving his desperately searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread made everyone’s golden stomach growl with hunger as carefully pulled from oven loaves making hot the kitchen baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged above, crashed against the seagulls as they soared into the salty ocean air, sending their rhythmic cries with blending mist sound.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic message made in the heart her mysterious address inside arrived in the race excitement and curiosity, mail.
+【句子 15】✅ 重组后: echoed through the hallway, resonant deep midnight old gears sound of the house struck silent chime as its slowly ancient clock turning spine echoed the sending shivers.
+【句子 16】✅ 重组后: blank stared at his searched hours, paintbrush inspiration, waiting to hesitantly bring the first life for stroke vision in the canvas.
+【句子 17】✅ 重组后: puppy tail wagged at the sight of its jumping owner, returning pure happiness, up with love its full eyes and home excitement.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they shared their mischief and trust of the moment they strengthened their friendship.
+【句子 19】✅ 重组后: the evening crowd swaying colorful lanterns filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: took stage, before breath onto a deep heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill as the jumped cat jumped outside the morning birds watching, bathed it in golden light and made it feel warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree spent, reading novel of the completely lost world story, unaware of the gentle breeze that rustled the leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed to mind since no one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries her notebook in a bag to jot down thoughts, random sketches or even ideas whenever inspiration no strikes, whatever where she is small.
+【句子 5】✅ 重组后: bright stars forming in the clear sky, ancient constellations telling stories carried by a cool breeze while the distant crashing of waves carried cool sound on shore.
+【句子 6】✅ 重组后: over the coffee cup that he just placed had a warm sudden knocked on the manuscript all of his unfinished manuscript, liquid spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing music for the sound audience of street strangers.
+【句子 8】✅ 重组后: the dusty in a photograph, found an old library book between his grandfather’s old pages showing a vintage couple of front in standing before, never had he seen his smiling car.
+【句子 9】✅ 重组后: little joy that she laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her as they shimmered their wings in sunlight.
+【句子 10】✅ 重组后: he just wanted to send an important message about his battery dying as he desperately cluttered his phone searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from oven loaves with the hot smell of the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged against the mist, crashed the seagulls soared into the salty ocean air, sending their rhythmic cries above with blending sound waves.
+【句子 14】✅ 重组后: no return, sealed wax red envelope with cryptic heart message made in the mysterious envelope inside arrived in the race excitement and curiosity a mail.
+【句子 15】✅ 重组后: the hallway chime, the deep resonant echo of a old clock sound of the house struck silently through as its slowly ancient gears turning spine echoed through his midnight shivers.
+【句子 16】✅ 重组后: blank stared at for hours, searching for inspiration, waiting to hesitantly bring the first stroke for paintbrush vision in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged its jumping owner with happiness, up at the sight of full eyes and its love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they shared their mischief and trust of a moment the they strengthened their friendship.
+【句子 19】✅ 重组后: the evening crowd swaying colorful lanterns filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: took stage, before breath onto a deep heart pounding moment, stepping into his spotlight as his chest illuminated, and stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill as the morning cat jumped onto the outside birds watching, bathed its fur as golden light in the making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon a oak tree spent, reading novel of the completely lost world story, unaware of the gentle breeze that rustled the leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a notebook in her bag to jot down thoughts, random sketches or even whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: bright stars in a clear sky, ancient constellations forming stories told while the cool breeze carried the crashing of waves distant crashing sound on shore.
+【句子 6】✅ 重组后: over coffee of the cup he just placed had the sudden warm wind knocked his manuscript onto all the unfinished liquid, spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians, distant cars and playing sound music for the street audience of strangers.
+【句子 8】✅ 重组后: the book in a dusty photograph found between his grandfather’s old library pages showing a vintage couple of front in standing before, never had he seen a smiling car.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her that shimmering their wings in sunlight.
+【句子 10】✅ 重组后: just as his phone was cluttered to send important message about he died as battery leaving his desperately searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread made everyone’s golden stomach growl with hunger as carefully pulled from oven loaves making hot the kitchen baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: rocks, jagged against the mist, crashed the seagulls soared above into the salty ocean air, sending their rhythmic cries with the blending sound waves.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic message made in the heart her mysterious address inside arrived in the race excitement and curiosity, mail.
+【句子 15】✅ 重组后: echoed through the hallway, resonant deep midnight old gears sound of the house struck silent chime as its slowly ancient clock turning spine echoed the sending shivers.
+【句子 16】✅ 重组后: blank stared at his searched hours, paintbrush inspiration, waiting to hesitantly bring the first life for stroke vision in the canvas.
+【句子 17】✅ 重组后: puppy tail wagged at the sight of its jumping owner, returning pure happiness, up with love its full eyes and home excitement.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they shared their mischief and trust of the moment they strengthened their friendship.
+【句子 19】✅ 重组后: the evening crowd swaying colorful lanterns filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: took stage, before breath onto a deep heart stepping his time pounding moment, chest in his spotlight, illuminated as he stood still.
+
+🔹 模型: t5-base_tau_08_80
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside and the watching birds bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon of a oak tree he spent, reading novel in the completely lost world story, under the unaware gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a small notebook in her bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: the bright stars in a clear sky, ancient constellations forming stories told while the distant breeze carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over all the coffee cup the he just placed had knocked a warm sudden wind on his unfinished manuscript, spilling the liquid of ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for an audience of the pedestrians.
+【句子 8】✅ 重组后: the book found in a dusty photograph in an old library grandfather’s old pages showing a vintage front of a car standing before, he had never seen a couple smiling.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her that shimmering their wings in sunlight.
+【句子 10】✅ 重组后: just leaving his phone to send an important message about he died as battery was desperately cluttered for his searching a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from the oven loaves filled with hot scent from the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, determined every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged against the waves, crashed as seagulls soared into the salty ocean air, sending their rhythmic cries into the blending mist sound.
+【句子 14】✅ 重组后: no return sealed in wax red envelope with a cryptic message made inside her mysterious heart, arrived in the race excitement and curiosity the mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep midnight a silent sound of the old house struck through its gears as the ancient clock turning slowly echoed his spine sending shivers.
+【句子 16】✅ 重组后: blank canvas stared for his blank hours, waiting for inspiration, hovering to hesitantly bring the first stroke for the vision in paintbrush.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged at the sight of its jumping owner, up with love its full eyes and pure happiness.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged by them as mischief and trust of a moment shared the they strengthened their friendship.
+【句子 19】✅ 重组后: the evening crowd lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: he took stage, before breath onto a heart stepping deep chest pounding moment, as in his spotlight, illuminated his time and stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside and the watching birds bathed it as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon, a oak tree spent his afternoon reading novel of the completely lost world story, under the unaware of gentle rustled oak leaves that rustled above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a notebook in her bag to jot down thoughts, random ideas or even sketches whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: the bright stars in the clear sky, ancient constellations forming stories told while the distant breeze carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over the coffee cup the he just placed had had a warm sudden knocked onto the unfinished manuscript all of his liquid, spilling ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for the audience of the pedestrians.
+【句子 8】✅ 重组后: book the dusty in a photograph he found an old library grandfather’s old pages showing a vintage car of front in standing before, never had he seen a smiling couple.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her that shimmering their wings in sunshine.
+【句子 10】✅ 重组后: he just wanted to send an important message about his battery died as he was desperately cluttered leaving his phone searching for a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the freshly baked bread filled with the smell of everyone’s golden smell growl hunger as carefully pulled from oven loaves making hot kitchen the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, determined every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys keys.
+【句子 13】✅ 重组后: the rocks, jagged against the waves, crashed as seagulls soared into the salty ocean air, sending their rhythmic cries above the blending mist sound.
+【句子 14】✅ 重组后: no return made in wax red envelope with a cryptic message inside the mysterious heart letter arrived in the race excitement and curiosity, sealed mail.
+【句子 15】✅ 重组后: echoed the hallway chime, resonant deep midnight a silent sound of the old house gears struck through as its slowly turning clock sending his spine echoed through the old shivers.
+【句子 16】✅ 重组后: blank canvas stared for his dream hours, waiting for inspiration, hovering to hesitantly bring the first stroke for the paintbrush vision in life.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement of its jumping owner, wagged down with happiness and up with the full eyes of its love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they shared their mischief and trust of the moment they strengthened their friendship.
+【句子 19】✅ 重组后: the evening market lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food crowd and cheerful tunes.
+【句子 20】✅ 重组后: he took stage, before breath onto a heart stepping deep chest pounding moment, and in his spotlight, illuminated as his time stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the morning jumped cat onto the windowsill outside and the watching birds bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old in the afternoon of a oak tree he spent, reading novel in the completely lost world story, under the unaware gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late arrived train, but seemed no mind since the one station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries a small notebook in her bag to jot down thoughts, random sketches or even ideas whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: the bright stars in a clear sky, ancient constellations forming stories told while the distant breeze carried the crashing of waves cool breeze sound on shore.
+【句子 6】✅ 重组后: over all the coffee cup the he just placed had knocked a warm sudden wind on his unfinished manuscript, spilling the liquid of ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for an audience of the pedestrians.
+【句子 8】✅ 重组后: book the dusty in a photograph he found in an old library grandfather’s old pages showing a vintage car of front in standing before, never had he seen a couple smiling.
+【句子 9】✅ 重组后: little joy that laughed pure as sunshine, ran across the garden chasing delicate butterflies playfully fluttered around her that shimmering their wings in sunlight.
+【句子 10】✅ 重组后: just leaving his phone to send an important message about he died as battery was desperately cluttered for his searching a charger in backpack frustrated him.
+【句子 11】✅ 重组后: the smell of freshly baked bread making everyone’s golden stomach growl hunger as carefully pulled from the oven loaves filled with hot scent from the baker.
+【句子 12】✅ 重组后: she determined perfect melody for the evening hours, determined every piano practiced gracefully through the house as gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged against the waves, crashed as seagulls soared into the salty ocean air, sending their rhythmic cries into the blending mist sound.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic message made inside her mysterious heart, arrived in the race excitement and curiosity in the mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep midnight a silent sound of the old house struck through its gears as the ancient clock turning slowly echoed his spine sending shivers.
+【句子 16】✅ 重组后: blank canvas stared for his blank hours, waiting for inspiration, hovering to hesitantly bring the first stroke for the vision in paintbrush.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement wagged down the owner of its happiness, up with love its full eyes and jumping eyes.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged by them as mischief and trust of a moment shared the they strengthened their friendship.
+【句子 19】✅ 重组后: the evening crowd lanterns swaying colorful filled with gently breeze, vibrant stalls selling street food, musicians playing for the lively food festival and cheerful tunes.
+【句子 20】✅ 重组后: he took stage, before breath onto a heart stepping deep chest pounding moment, as in his spotlight, illuminated his time and stood still.
+
+🔹 模型: t5-small_reorder_100
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill outside the cat and bathed its fur in the morning, making it feel warm and cozy watching birds.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel story of the old oak tree above him, completely unaware that rustled leaves lost in the world, under gentle breeze.
+【句子 3】✅ 重组后: the train station arrived late, but no one was filled in their mind since the travelers engaged in checking their phones, sipping coffee, and checking lively conversations.
+【句子 4】✅ 重组后: whenever she strikes down her ideas, no matter where inspiration she carries down her thoughts, or even sketches to a small bag in random notebook.
+【句子 5】✅ 重组后: Ancient constellations carried distant stars on the shore, forming clear sound waves while crashing the bright sky in a cool night sky told the stories of distant waves.
+【句子 6】✅ 重组后: he knocked all over his unfinished manuscript, spilling the sudden liquid spilling over the warm wind of the coffee cup just before a cup had placed the ink.
+【句子 7】✅ 重组后: the audience was alive for an audience of distant strangers with bright neon lights playing the sound of pedestrians, cars, and street honking musicians.
+【句子 8】✅ 重组后: he had never seen a couple of old books in front of his library pages, showing a dusty photograph between a smiling grandfather’s car standing in the front of an old book.
+【句子 9】✅ 重组后: tiny butterflies ran across the garden as she laughed playfully, chasing their shimmering wings that fluttered across delicate sunlight in the pure joy she ran across.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving just a cluttered phone to send an important message about his battery.
+【句子 11】✅ 重组后: baker carefully pulled the golden growl from the oven with freshly baked bread loaves making everyone’s hunger filled with hot heart scent of the kitchen.
+【句子 12】✅ 重组后: gliding fingers practiced gracefully over the empty piano keys, as she determined the perfect melody for every evening hours through the practiced empty house notes echoed.
+【句子 13】✅ 重组后: seagulls soared above the ocean, sending their cries into salty rocks, blending with the jagged mist waves sending the air rhythmic sound into the ocean.
+【句子 14】✅ 重组后: Upon her return, a cryptic red wax letter arrived in the race envelope with no mysterious curiosity and excitement inside the sealed message made in a heart address.
+【句子 15】✅ 重组后: deep resonant gears echoed the sound of his old house, sending silent shivers slowly turning the clock through the old hallway as a chime struck its silent spine.
+【句子 16】✅ 重组后: paintbrush, hovering hovering at the blank canvas waiting for hours, hesitantly searching for inspiration to bring his vision in the first stroke life.
+【句子 17】✅ 重组后: the puppy owner wagged down its tail at its full sight, returning its home with pure jumping excitement, happiness and love of its tail.
+【句子 18】✅ 重组后: giggling glances softly whispered their best trust and strengthened their friendship by knowing the moment of mischief they shared as they exchanged into a shared secret.
+【句子 19】✅ 重组后: swaying the crowd filled with colorful lanterns, cheerful street stalls playing delicious tunes for the evening festival, cheerful musicians selling cheerful lanterns and gently swaying delicious food.
+【句子 20】✅ 重组后: deep spotlight illuminated his heart, breath, and chest as he stood still in his breath before stepping onto a pounding moment stage.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: golden light jumped onto the windowsill as the cats watched and bathed its fur outside the cat, making it cozy in the morning feel warm.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel story, unaware that he lost the old world of oak tree under the gentle breeze, completely rustled under him above the trees.
+【句子 3】✅ 重组后: coffee was late, filled and filled in the train station, but no one seemed to mind the travelers who arrived late, sipping their phones and checking their lively conversations.
+【句子 4】✅ 重组后: jot down whenever she strikes down her ideas, no matter where she is in a small bag, she carries inspiration to her notebook even sketches or random thoughts.
+【句子 5】✅ 重组后: ancient constellations carried on the shore, forming clear sound waves while crashing the distant stars on a clear night sky carried the stories of cool sun in the bright waves.
+【句子 6】✅ 重组后: he had just placed his manuscript onto a warm ink, spilling the sudden wind over the liquid spilling of the unfinished coffee cup just before the cup knocked his unfinished.
+【句子 7】✅ 重组后: the crowd was alive for an audience of distant crowds, the noisy cars, the noise of street lights and the bright neon sound of musicians playing with alive pedestrians.
+【句子 8】✅ 重组后: a couple of pages in front of an old library, a dusty photograph showing his grandfather’s old car standing in the front of a smiling book never found before had seen his library.
+【句子 9】✅ 重组后: little butterflies ran across the garden, playingfully chasing her delicate wings that laughed as she fluttered across the shimmering sunlight around her in pure joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving just a cluttered phone charger to send an important message about his battery.
+【句子 11】✅ 重组后: baker scoopl the golden heart of the oven with freshly baked bread pulled from the oven making the food to growl hot and filled with everyone’s hungry smell.
+【句子 12】✅ 重组后: gliding through empty keys for every evening hours, she gracefully determined the perfect piano notes as the fingers practiced her melody over the echoed house.
+【句子 13】✅ 重组后: the seagulls soared above the ocean, sending their cries into salty rocks, blending the salty air with the jagged mist blending rhythmic sound against waves.
+【句子 14】✅ 重组后: cryptic wax arrived in the envelope with no mysterious red mail delivered in a cryptic letter, and the heart excited heart made a message return inside her curiosity.
+【句子 15】✅ 重组后: the chime echoed its ancient sounds as the old resonant chime slowly struck the echoed spine of the house, sending deep shivers through the silent turning clock clock of its old hallway gears.
+【句子 16】✅ 重组后: His vision, hovering at the blank canvas for the first hours, hesitantly stared at searching for paintbrush inspiration to bring his stroke in waiting life.
+【句子 17】✅ 重组后: puppy owner wagged down its eyes at its full sight, returning its pure love of the door with its jumping tail and happiness, excitement returning home.
+【句子 18】✅ 重组后: giggling glances softly whispered her secret and strengthened their trust knowing the best moment of friendship as they shared a moment of mischief with their exchanged.
+【句子 19】✅ 重组后: The cheerful crowd filled the festival stalls with cheerful lanterns, cheerful swaying tunes, cheerful street breeze playing delicious musics and gently selling colorful lanterns for the evening food.
+【句子 20】✅ 重组后: breath, breath, and chest illuminated breath as a moment stood still in his deep spotlight before stepping onto his heart stage.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill outside the cat and bathed its fur in the morning, making it feel warm and cozy watching birds.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel story of the old oak tree above him, completely unaware that rustled leaves lost in the world, under gentle breeze.
+【句子 3】✅ 重组后: the train station arrived late, but no one was filled in their mind since the travelers engaged in checking their phones, sipping coffee, and checking lively conversations.
+【句子 4】✅ 重组后: whenever she strikes down her ideas, no matter where inspiration she carries down her thoughts, or even sketches to a small bag in random notebook.
+【句子 5】✅ 重组后: Ancient constellations carried distant stars on the shore, forming clear sound waves while crashing the bright sky in a cool night sky told the stories of distant waves.
+【句子 6】✅ 重组后: he knocked all over his unfinished manuscript, spilling the sudden liquid spilling over the warm wind of the coffee cup and knocked the ink onto a just unfinished cup.
+【句子 7】✅ 重组后: the audience was alive for an audience of distant strangers with bright neon lights playing the sound of pedestrians, cars, and street honking musicians.
+【句子 8】✅ 重组后: a couple of pages in front of his library had never seen an old book showing a dusty photograph between his grandfather’s smiling, standing in the front of a vintage car.
+【句子 9】✅ 重组后: tiny butterflies ran across the garden as she laughed playfully, chasing their shimmering wings that fluttered across delicate sunlight in the pure joy she ran across.
+【句子 10】✅ 重组后: he was desperately searching for an important phone charger in his backpack as he died leaving him cluttered and frustrated to send his message about just a cluttered battery.
+【句子 11】✅ 重组后: baker carefully pulled the golden growl from the oven with freshly baked bread loaves making everyone’s hunger filled with hot heart scent of the kitchen.
+【句子 12】✅ 重组后: gliding fingers practiced gracefully over the empty house keys, as she determined the perfect piano melody for every evening hours through the determined echoed notes.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their cries into the ocean, blending with the jagged mist waves sending rhythmic air cries against the salty rocks.
+【句子 14】✅ 重组后: Upon her return, a cryptic red wax letter arrived in the race envelope with no mysterious curiosity and excitement inside the sealed message made in a heart address.
+【句子 15】✅ 重组后: deep resonant gears echoed the sound of his old house, sending silent shivers slowly turning the clock through the old hallway as a chime struck its silent spine.
+【句子 16】✅ 重组后: paintbrush stared at the canvas, waiting for hours hovering at the blank canvas, hesitantly searching for inspiration to bring his stroke vision in the first hours.
+【句子 17】✅ 重组后: the puppy owner wagged down its tail at its full sight, returning its home with pure jumping joy, happiness and excitement of its tail.
+【句子 18】✅ 重组后: giggling glances softly whispered their best trust and strengthened their friendship by knowing the moment of mischief they shared as they exchanged into a shared secret.
+【句子 19】✅ 重组后: The crowd filled with cheerful lanterns, cheerful street stalls playing delicious tunes for the evening festival, cheerful music musicians selling colorful lanterns and gently swaying the vibrant street breeze.
+【句子 20】✅ 重组后: deep spotlight illuminated his heart, breath, and chest as he stood still in his breath before stepping onto a pounding moment stage.
+
+🔹 模型: t5-small_reorder_30
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill in the morning, making it cozy and warm as the birds watch watching its fur outside.
+【句子 2】✅ 重组后: Upon reading the novel, he spent the afternoon reading under a gentle breeze, unaware that the old tree leaves him completely lost in the world of rustled oak.
+【句子 3】✅ 重组后: The train station was filled with coffee, sipping phones, and checking conversations since no one seemed to arrive late, but the travelers engaged in lively conversations.
+【句子 4】✅ 重组后: jot down in a small bag whenever she strikes, no matter where she carries ideas or thoughts down, she carries random inspiration to her notebook.
+【句子 5】✅ 重组后: The stories of ancient constellations carried on the shore, forming a clear sound in the bright sky while distant waves crashing on the cold night sky carried distant stars.
+【句子 6】✅ 重组后: Upon smudging over the warm wind, he knocked all the liquid spilling over his coffee cup, knocked the manuscript onto a sudden unfinished liquid.
+【句子 7】✅ 重组后: The audience of the city was alive with an audience of bright neon lights, honking the sound of street lights, and playing music for the distant pedestrians with distant strangers.
+【句子 8】✅ 重组后: a couple of pages in his old library had never seen an old car in the front, showing a dusty photograph of his grandfather standing before smiling in a vintage book.
+【句子 9】✅ 重组后: chasing butterflies across the garden, she laughed as they fluttered their delicate wings in pure sunlight as she ran playfully fluttered across pure joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving him cluttered and frustrated to send an important message about his phone battery.
+【句子 11】✅ 重组后: the golden growl bread pulled from the oven with golden loaves filled with freshly baked bread, making everyone’s hungry stomach filled with hot scent as the baker carefully.
+【句子 12】✅ 重组后: I gracefully practiced the perfect melody for every evening, as she gracefully echoed the fingers through empty piano keys practiced over the piano house notes.
+【句子 13】✅ 重组后: seagulls soared above the ocean, sending salty waves into the ocean, blending their rhythmic sound with the jagged mist cries, sending the ocean rocks into the air.
+【句子 14】✅ 重组后: cryptic letters arrived in the mail, sealed with a red wax envelope envelope and no mysterious curiosity made her return in the heart race with a mysterious letter.
+【句子 15】✅ 重组后: a deep resonant chime echoed the ancient midnight clock, sending silent shivers through the hallway of his house as the clock echoed its old gears slowly struck its spine.
+【句子 16】✅ 重组后: He stared at the canvas, hovering hovering for hours, hovering hesitantly waiting to bring his inspiration for stroke vision in the first life.
+【句子 17】✅ 重组后: puppy home owner wagged down at its full sight, returning with pure happiness and excitement, jumping down its tail with the pure love of its eyes.
+【句子 18】✅ 重组后: giggling glances softly exchanged their secrets into a secret moment of friendship and strengthened their trust by knowing the best whispered glances of their shared mischief.
+【句子 19】✅ 重组后: Festival stalls filled with colorful lanterns, cheerful street music, cheerful musicians playing lively tunes for the evening, gently selling delicious food and swaying the crowd.
+【句子 20】✅ 重组后: deep breath, breath, and chest illuminated him as a moment stood still in his heart stage, before stepping onto a deep spotlight.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: the windowsill jumped onto the golden golden cat as it jumped into the cat, making it cozy and warm outside watching the birds.
+【句子 2】✅ 重组后: The tale of a novel by reading the old tree above the rustled oak leaves, a completely unaware old world tree that he lost in the breeze, spent in the afternoon reading.
+【句子 3】✅ 重组后: the train arrived late, but no one seemed to mind the conversations, checking their phones and sipping coffee, since the travelers engaged in lively conversations seemed to arrive.
+【句子 4】✅ 重组后: I don't know where her inspiration strikes, or even when she strikes in a small bag, she carries random thoughts down to random ideas in her notebook.
+【句子 5】✅ 重组后: forming a clear, clear sound crashing sound in the distant stars, the stories carried on distant stars while forming distant constellations carried the night sky on the shore.
+【句子 6】✅ 重组后: During the sudden sudden smudging over the liquid, he knocked the manuscript on all the liquid spilling liquid, knocked the cold coffee cup.
+【句子 7】✅ 重组后: the sound of the neon street was bright, bright, and alive with an audience of young musicians playing music for the loud chatter of pedestrians and distant strangers.
+【句子 8】✅ 重组后: The photograph never found a couple of pages in the back of a collector’s book, showing his grandfather smiling in a dusty car before his library had seen a couple standing in the old books.
+【句子 9】✅ 重组后: shimmering butterflies ran across the garden as she laughed as they playedfully fluttered across the shimmering sunlight, chasing their delicate wings in pure joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving him cluttered in his phone looking for an important message about his battery.
+【句子 11】✅ 重组后: Pancake bread pulled from the golden oven with golden spherical scent of the baked hot pan, making the kitchen hot and filled with hungry every day.
+【句子 12】✅ 重组后: She gracefully practiced the perfect melody for every evening piano house, gliding through empty fingers as the piano keys determined the perfect melody over hours.
+【句子 13】✅ 重组后: seagulls soared into the ocean, sending salty rocks, blending their rhythmic waves with the jagged mist, and their cries above the ocean ocean crashed.
+【句子 14】✅ 重组后: The mysterious, red wax letter arrived in the letter and sealed her with a heart charm sealed with no curiosity in the envelope, made the mysterious back letter arrived in her race.
+【句子 15】✅ 重组后: chime echoed the ancient ancient clock, sending a silent silent sound through the hallway echoed by the clock turning the clock to the deep resonant shivers of his old house.
+【句子 16】✅ 重组后: His first stroke, hovering at the canvas, stared for hours waiting at his paintbrush to bring inspiration for the blank canvas.
+【句子 17】✅ 重组后: puppy tail jumping down its full eyes at the home with pure joy, excitement, and happiness of its owner returning with its wagged tail.
+【句子 18】✅ 重组后: giggling glances softly exchanged their secret as they shared a secret moment of trust and strengthened their trust by knowing the best of their shared secret.
+【句子 19】✅ 重组后: crowd filled with colorful lanterns, cheerful street music, lively stalls and cheerful music, gently selling the colorful tunes for the evening festival filled with lively music.
+【句子 20】✅ 重组后: stepping onto a deep breath, breathing moment, and breath, stood as his chest illuminated his heart and stood still in his spotlight.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill in the morning, making it cozy and warm as the birds watch watching its fur outside.
+【句子 2】✅ 重组后: Upon reading the novel, he spent the afternoon reading under a gentle breeze that leaves him completely unaware of the old world tree, rustled above the old oak tree.
+【句子 3】✅ 重组后: The train was filled with coffee, sipping phones, and checking conversations since no one seemed to arrive late, but the travelers engaged in lively conversations.
+【句子 4】✅ 重组后: jot down in a small bag whenever she strikes, no matter where she carries ideas or thoughts down, she carries random inspiration to her notebook.
+【句子 5】✅ 重组后: Ancient stories carried on the shore of the distant stars, forming a clear sound in the sky while crashing bright waves carrying distant constellations on the cool night breeze.
+【句子 6】✅ 重组后: Upon smudging over the warm wind, he had knocked all the liquid spilling over his coffee cup, knocked the manuscript onto a sudden ink of the unfinished liquid.
+【句子 7】✅ 重组后: The audience of the city was an audience with bright neon lights, honking lights, and loud chatter for playing the sound of pedestrians alive with the distant strangers.
+【句子 8】✅ 重组后: a couple of pages in his old library had never seen a photograph of a dusty car in the front, showing his grandfather smiling before standing in a vintage book.
+【句子 9】✅ 重组后: She laughed as butterflies ran across the garden, chasing their delicate wings that fluttered in pure sunlight as she playedfully fluttered across her pure joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving him cluttered and frustrated to send an important message about his phone battery.
+【句子 11】✅ 重组后: the golden growl bread pulled from the oven with golden loaves filled with freshly baked bread and golden scent making the oven hot for everyone’s stomach hunger.
+【句子 12】✅ 重组后: I gracefully practiced the perfect melody for every evening, as she gracefully echoed the fingers through empty piano keys for hours over the house gliding notes.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their cries into the air, blending the salty waves with rhythmic sound cries, sending the seagulls to the jagged mist.
+【句子 14】✅ 重组后: cryptic letters arrived in the mail, sealed with a red wax envelope and no mysterious curiosity made her return in the heart race with a mysterious letter.
+【句子 15】✅ 重组后: chime shivers slowly through the old house hallway, sending a silent resonant sound of the ancient midnight clock echoed as his spine echoed his old resonant gears.
+【句子 16】✅ 重组后: He stared at the canvas, hovering hovering for hours, hovering hesitantly waiting for inspiration to bring the first stroke in his life for paintbrush vision.
+【句子 17】✅ 重组后: puppy home owner wagged down at its full sight, returning with pure happiness and excitement, jumping down its tail with the pure love of its eyes.
+【句子 18】✅ 重组后: giggling glances softly exchanged their secrets into a secret moment of friendship and strengthened their trust by knowing the best whispered glances of their shared mischief.
+【句子 19】✅ 重组后: swaying the crowd with colorful lanterns, cheerful street music, and cheerful musicians playing cheerful tunes gently selling delicious food for the evening festival stalls filled with colorful breeze.
+【句子 20】✅ 重组后: deep breath, breath, breath, and chest illuminated him as a moment stood still in his heart stage, before stepping onto a deep spotlight.
+
+🔹 模型: t5-small_reorder_50
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill in the morning, making it feel warm and cozy watching the cats as golden fur birds bathed outside.
+【句子 2】✅ 重组后: During the afternoon, he spent a gentle reading of the novel oak tree above him, unaware that he completely lost the old world in the breeze under rustled leaves.
+【句子 3】✅ 重组后: the train station was filled with coffee, sipping, checking, and checking conversations since no one seemed to mind the travelers engaged in their lively conversations since they arrived late.
+【句子 4】✅ 重组后: jot down in a small bag of notebook sketches whenever she strikes, she carries inspiration to her ideas, even no matter where random thoughts or ideas strikes.
+【句子 5】✅ 重组后: Ancient stories of distant constellations carried on the shore, forming a clear sound in the bright sky while distant waves crashing on the night breeze carried distant stars.
+【句子 6】✅ 重组后: a sudden smudging of the liquid spilling over the coffee cup had knocked all over his manuscript, he just placed a warm ink on the unfinished liquid.
+【句子 7】✅ 重组后: the audience of the city was alive with an audience of bright neon lights, honking the sound of street cars, playing music for distant pedestrians and distant strangers.
+【句子 8】✅ 重组后: he had never seen a couple of pages in the library before, showing a dusty photograph of his grandfather smiling in front of a vintage car standing in a vintage book.
+【句子 9】✅ 重组后: tiny butterflies ran across the garden as she laughed playfully, chasing their delicate wings that fluttered across pure sunlight in the shimmering joy she laughed.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack to send an important message about his battery as he died leaving him cluttered.
+【句子 11】✅ 重组后: Baker carefully pulled the golden growl bread from the oven with freshly baked loaves making everyone’s hungry stomach filled with hot scent of the kitchen.
+【句子 12】✅ 重组后: I gracefully practiced the perfect melody for every evening, as she gracefully echoed the empty keys over hours through the piano house gliding fingers.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their mist cries into the air, blending with the rhythmic waves blending their salty sound against the jagged rocks.
+【句子 14】✅ 重组后: Upon her return, no mystery letter arrived in the mail sealed with a cryptic wax envelope and made a mysterious red heart address in the curiosity race.
+【句子 15】✅ 重组后: a deep resonant chime echoed the sound of his ancient house, slowly sending silent shivers through the hallway as the clock echoed its old clock turning silent gears struck its spine.
+【句子 16】✅ 重组后: paintbrush stared hesitantly waiting for hours, hovering at the blank canvas, waiting to bring inspiration for the first stroke in his vision life.
+【句子 17】✅ 重组后: puppy owner wagged down at the sight of its full tail, returning with pure happiness and excitement, jumping down its loving eyes.
+【句子 18】✅ 重组后: giggling glances softly exchanged their trust and strengthened their friendship as they whispered their best secrets into the moment of mischief shared by a whispered friend.
+【句子 19】✅ 重组后: Festival stalls filled with colorful lanterns, cheerful street music, and cheerful musicians gently playing cheerful tunes for the cheerful crowd selling delicious delicious food and swaying the evening breeze.
+【句子 20】✅ 重组后: deep spotlight illuminated his chest, breath, breath, and breath as he stood still in his moment stage before stepping onto a deep stage.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill and watched birds in the morning, making it cozy and warm as its golden fur looks cozy outside the cat.
+【句子 2】✅ 重组后: The world spent the afternoon reading a novel novel of rustled oak tree under the breeze above him, unaware that he completely lost the leaves, under gentle old trees.
+【句子 3】✅ 重组后: the train station was filled with lively conversations, sipping coffee, and checking the phones, but no one seemed to mind the travelers engaged in their late arrival since conversations arrived late.
+【句子 4】✅ 重组后: jot down a bag of notebook ideas, whenever she strikes, she carries ideas down to random thoughts or even sketches where she is inspiration.
+【句子 5】✅ 重组后: Ancient stories carried on a clear shore in the night sky, forming the sound of bright bright stars while distant waves carried the fresh breeze crashing on the sky.
+【句子 6】✅ 重组后: Upon his manuscript, he had knocked all of the unfinished liquid spilling over the coffee cup and placed a sudden warm ink spilling over the liquid.
+【句子 7】✅ 重组后: The audience of the music was alive with bright neon lights, an audience playing with distant strangers, pedestrians and neon chatter, for the noisy street lights of the city.
+【句子 8】✅ 重组后: a couple of pages in the front of a library library found in his old car, showing his grandfather never seen an old picture of smiling in a dusty photograph before standing a couple.
+【句子 9】✅ 重组后: as her wings sparkle around the garden, she laughed playfully and fluttered across the shimmering butterflies that ran across their delicate glowing sunshine.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving him cluttered in his phone just leaving a frustrated message about his battery.
+【句子 11】✅ 重组后: the golden golden growl oven filled with freshly baked bread loaves pulled from the oven making the hot oven smell of hot bread as well as all the hungry cookr.
+【句子 12】✅ 重组后: She gracefully practiced the piano melody as echoed through empty fingers, determined the perfect melody for every evening hours through the practiced gliding house keys.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending the seagulls into the air, blending their vocal mist against cries with rhythmic waves blending their salty sound.
+【句子 14】✅ 重组后: the mysterious red wax envelope arrived in a sealed heart with no curiosity in her letter, and no surprise returned the letter inside a cryptic address.
+【句子 15】✅ 重组后: Upon the passing of the old house chime, the ancient deep resonant sound echoed his spine sending his clock gears slowly striking the dark hallway through a turning silent clock.
+【句子 16】✅ 重组后: His first inspiration in stroke vision, the paintbrush hovering hovering at his canvas, hesitantly searched for hours to bring blank vision for the first hours.
+【句子 17】✅ 重组后: puppy home owner, the pure owner, wagged its tail up at its sight with pure happiness and excitement returning its happiness with pure jumping.
+【句子 18】✅ 重组后: as she softly exchanged and exchanged her secret glances as they strengthened their trust into the secret moment of a shared giggling mischief with their best knowing.
+【句子 19】✅ 重组后: crowd swaying the crowd with colorful lanterns, cheerful street music stalls, gently playing cheerful tunes and selling delicious food for the evening filled with cheerful cheerful music.
+【句子 20】✅ 重组后: deep breath illuminated his heart, stood still in his moment and stepped onto a spotlight stage before pounding, breath, while his chest took his breath.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill in the morning, making it feel warm and cozy watching the cats as golden fur birds bathed outside.
+【句子 2】✅ 重组后: Upon reading the novel story, he spent the afternoon in a gentle breeze above the old world, unaware that he lost his tree under rustled oak leaves completely.
+【句子 3】✅ 重组后: the train station was filled with coffee, sipping phones, checking and checking conversations, but no one seemed to mind the travelers engaged in their lively conversations since they arrived late.
+【句子 4】✅ 重组后: jot down in a small bag whenever she strikes, no matter where she carries ideas or thoughts, she carries inspiration to her notebook even random sketches.
+【句子 5】✅ 重组后: Ancient stories carried on the shore of a distant constellations, forming clear sound waves while distant stars crashing in the bright sky forming a cool night breeze.
+【句子 6】✅ 重组后: he knocked all the liquid spilling over his coffee cup, knocked the unfinished manuscript onto a sudden ink of the warm wind that had just placed the liquid spilling.
+【句子 7】✅ 重组后: the audience of the city was alive with bright neon lights, an audience of musicians playing music for distant strangers, pedestrians, and street honking the sound of cars.
+【句子 8】✅ 重组后: a couple of pages had never seen his grandfather in the library before, showing a dusty photograph of a vintage car in front of an old library showing his smiling standing.
+【句子 9】✅ 重组后: chasing butterflies around their delicate wings, she laughed playfully as she fluttered across the shimmering sunlight in the garden and ran across pure joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving him cluttered and frustrated to send an important message about his phone battery.
+【句子 11】✅ 重组后: the golden golden growl bread pulled from the oven with freshly baked loaves makes the oven filled with hot hunger scent of everyone’s stomach as carefully prepared baker.
+【句子 12】✅ 重组后: I gracefully practiced the perfect melody for every evening, as she gracefully echoed the empty piano keys over hours through the practiced gliding fingers house notes.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their mist cries into the ocean, blending with the salty air waves blending their rhythmic sound with the jagged rocks.
+【句子 14】✅ 重组后: cryptic letter arrived in the mail, sealed with a red wax envelope envelope and no mysterious curiosity made her heart address return in the excitement and a mysterious race.
+【句子 15】✅ 重组后: a deep resonant chime echoed the sound of his old house, slowly sending silent shivers through the hallway as the ancient clock echoed its turning spine struck its silent gears.
+【句子 16】✅ 重组后: He stared hesitantly waiting for hours, hovering at the blank canvas, waiting for inspiration to bring his stroke vision in the first life for paintbrush inspiration.
+【句子 17】✅ 重组后: puppy tail jumping at its full sight, returning home with pure happiness and excitement, the owner wagged down its love of its eyes.
+【句子 18】✅ 重组后: giggling glances softly exchanged their trust and strengthened their friendship as they whispered their best secrets into the moment of mischief shared by a whispered friend.
+【句子 19】✅ 重组后: Festival stalls filled with colorful lanterns, cheerful street musicians playing delicious tunes for the evening, gently selling cheerful lanterns and swaying the crowd with vibrant street breeze.
+【句子 20】✅ 重组后: deep spotlight illuminated his heart, breath, and chest as he stood still in his moment stage, before stepping onto a pounding moment.
+
+🔹 模型: t5-small_reorder_80
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill outside the cat and bathed its fur in the morning, making it feel warm and cozy watching birds.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel story of the old oak tree above him, completely unaware that rustled leaves lost in the world, under gentle breeze.
+【句子 3】✅ 重组后: the train station arrived late, but no one was filled in their mind since the travelers engaged in checking their phones, sipping coffee, and checking lively conversations.
+【句子 4】✅ 重组后: jot down in a small bag of notebook sketches whenever she strikes, no matter where she carries inspiration to her ideas, even random thoughts or ideas.
+【句子 5】✅ 重组后: Ancient constellations carried distant stars on the shore, forming clear sound waves while crashing the bright sky in a cool night sky carried the stories of distant waves.
+【句子 6】✅ 重组后: he knocked his manuscript onto the unfinished coffee cup, spilling all over the sudden wind of the liquid spilling a sudden ink that had just placed a warm ink.
+【句子 7】✅ 重组后: the audience of the city was alive for an audience of distant strangers playing music with bright neon lights, honking cars, and street chatter of the pedestrians alive.
+【句子 8】✅ 重组后: a couple of pages had never seen his grandfather standing in front of the library before, showing a dusty photograph of a vintage car in an old book found smiling between his library.
+【句子 9】✅ 重组后: tiny butterflies ran across the garden as she laughed playfully, chasing their shimmering wings that fluttered across pure sunlight in the delicate joy she ran around.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving just a cluttered phone to send an important message about his battery.
+【句子 11】✅ 重组后: baker carefully pulled the golden growl bread from the oven with freshly baked loaves making everyone’s hungry stomach filled with hot smell of the oven.
+【句子 12】✅ 重组后: gliding her fingers gracefully determined the perfect melody for every evening, as she practiced empty keys over the piano notes echoed through the evening house.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their mist cries into the ocean, blending with the salty rocks sending rhythmic waves blending with the air cries.
+【句子 14】✅ 重组后: Upon her return, a mysterious red wax letter arrived in the envelope with no curiosity and excitement made a cryptic heart address sealed inside the mail.
+【句子 15】✅ 重组后: deep resonant shivers slowly echoed the sound of his old house, sending silent chime gears through the dark hallway as the clock struck its echoed midnight turning spine.
+【句子 16】✅ 重组后: paintbrush, hovering hovering at the blank canvas waiting for hours, hesitantly searching for inspiration to bring his vision in the first stroke life.
+【句子 17】✅ 重组后: the puppy owner wagged down its tail at its full sight, returning home with pure happiness, excitement and happiness of its jumping eyes.
+【句子 18】✅ 重组后: giggling glances softly whispered into the best moment of their friendship and strengthened their trust by knowing the secret exchanged as they shared their mischief.
+【句子 19】✅ 重组后: swaying the crowd filled with colorful lanterns, cheerful street stalls playing delicious tunes for the evening festival, cheerful musicians selling delicious food and gently swaying the breeze.
+【句子 20】✅ 重组后: deep spotlight illuminated his heart, breath, and chest as he stood still in his breath, before stepping onto a pounding moment stage.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: the cat jumped onto the windowsill in the morning and bathed its golden fur, making it cozy as birds watching the warm light outside.
+【句子 2】✅ 重组后: the story of the old rustled oak tree in the afternoon, above him, a novel book that spent reading with gentle breeze leaves unaware that he completely lost the world under old trees.
+【句子 3】✅ 重组后: the train station was filled with coffee, sipping coffee, and checking their phones since no one seemed to mind the late travelers engaged in busy conversations, but arrived in the mind.
+【句子 4】✅ 重组后: jot down a bag of sketches, ideas or thoughts whenever she strikes, even whenever she carries her inspiration in a small notebook.
+【句子 5】✅ 重组后: Ancient stories of distant constellations carrying the light waves on the shore carried the bright sound waves in a clear sky, while crashing distant stars forming cool stories.
+【句子 6】✅ 重组后: he had just placed a warm coffee cup on the unfinished manuscript, spilling over the liquid spilling his sudden wind over the ink of the unfinished cup.
+【句子 7】✅ 重组后: the audience of the bright neon street was alive for the audience of young music musicians playing with alive pedestrians, strangers, and cars honking an audience of neon sound lights.
+【句子 8】✅ 重组后: a couple of pages had never seen a vintage book of his grandfather’s, showing the dusty picture in front of an old library in his car sitting in a smile picture before found.
+【句子 9】✅ 重组后: chasing butterflies around her, she laughed as the little delicate butterflies playedfully in the garden fluttered across shimmering sunlight around her fluttered pure wings.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as a cluttered phone left him a frustrated message about leaving his battery just cluttered.
+【句子 11】✅ 重组后: bread of the prepared golden growl oven golden growl pulled from the oven making the bread baked with carefully filled loaves filled with everyone’s hunger scent.
+【句子 12】✅ 重组后: gliding through the empty keys for every evening, she gracefully determined the perfect melody determined through the piano fingers practiced over empty house notes.
+【句子 13】✅ 重组后: seagulls soared above the ocean, sending salty waves with their rhythmic sound, blending the cries above the seagulls sending the mist waves into salty air.
+【句子 14】✅ 重组后: a red wax envelope envelope arrived in the sealed mail, with no mystery and excitement in her heart made the letter return a mystery cryptic heart address wrapped inside the curiosity.
+【句子 15】✅ 重组后: a silent chime struck the old house hallway as the clock slowly echoed its resonant sound, sending the silent spine of the silent chime through his turning midnight gears.
+【句子 16】✅ 重组后: paintbrush, hovering at the canvas in his first hours waiting for the blank canvas to bring inspiration for stroke vision, stared hesitantly searching for inspiration.
+【句子 17】✅ 重组后: the owner wagged down its eyes with pure happiness, excitement and happiness, returning its puppy tail with pure jumping down its eyes at full sight of its home.
+【句子 18】✅ 重组后: giggling glances whispered their best secrets of trust as they exchanged their a moment of giggling and strengthened their friendship by knowing the mischief they shared.
+【句子 19】✅ 重组后: Festival music stalls filled with colorful lanterns, cheerful street breeze and cheerful lanterns playing delicious tunes for the lively evening crowd, gently selling the cheerful and swaying delicious food.
+【句子 20】✅ 重组后: deep breath illuminated his heart in his chest, stood still as his breath, breath, and pounding moment took him onto a spotlight stage before stepping into time.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: the golden light jumped onto the windowsill and bathed its fur in the morning, making it feel cozy watching the cats outside as warm birds.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel story of the old oak tree above him, completely unaware that rustled leaves lost in the world, under gentle breeze.
+【句子 3】✅ 重组后: the train station arrived late, but no one was filled in their mind since the travelers engaged in checking their phones, sipping coffee, and checking lively conversations.
+【句子 4】✅ 重组后: jot down in a small bag of notebook sketches, where she carries ideas to her inspiration whenever she strikes, no matter whether she is inspiration or even random thoughts.
+【句子 5】✅ 重组后: ancient constellations carried distant stars on the shore, forming clear sound waves while crashing the bright sky in a cool night sky carried the stories of distant waves.
+【句子 6】✅ 重组后: he knocked his manuscript onto the unfinished coffee cup, spilling all over the sudden wind of the liquid spilling a sudden ink that had just placed a warm ink.
+【句子 7】✅ 重组后: the audience was alive for an audience of distant strangers playing the sound of bright neon lights, honking cars, pedestrians and street musicians with the bright chatter of the city.
+【句子 8】✅ 重组后: a couple of pages in front of his library had never seen an old book showing a dusty photograph between his grandfather’s books, standing in a vintage car smiling before the found.
+【句子 9】✅ 重组后: tiny butterflies ran across the garden as she laughed playfully, chasing their shimmering wings in pure sunlight that fluttered around her delicate joy.
+【句子 10】✅ 重组后: he was desperately searching for an important charger in his backpack as he died leaving just a cluttered phone to send an important message about his battery.
+【句子 11】✅ 重组后: baker carefully pulled the golden growl bread from the oven and filled with freshly baked loaves making everyone’s hungry stomach filled with hot smell of the oven.
+【句子 12】✅ 重组后: During the evening, she gracefully determined the perfect piano keys for every empty house as the melody echoed through fingers practiced gliding notes over hours.
+【句子 13】✅ 重组后: seagulls soared above the salty ocean, sending their mist cries into the ocean, blending with the salty rocks sending rhythmic waves blending their sound with the jagged air.
+【句子 14】✅ 重组后: cryptic red wax arrived in a sealed envelope with no mystery message inside the letter, and the curiosity made her heart address return a mysterious letter in curiosity.
+【句子 15】✅ 重组后: a silent chime echoed the sound of his old house, sending shivers slowly turning through the dark hallway as the ancient clock struck its deep spine resonant gears.
+【句子 16】✅ 重组后: paintbrush, hovering at the blank canvas waiting for hours, hesitantly searching for inspiration to bring his stroke vision in the first life.
+【句子 17】✅ 重组后: the puppy owner wagged down its tail at its full sight, returning home with pure happiness, excitement and happiness of its jumping eyes.
+【句子 18】✅ 重组后: giggling glances softly whispered into the best moment of their friendship and strengthened their trust by knowing the secret exchanged as they shared a mischief they whispered.
+【句子 19】✅ 重组后: swaying the crowd filled with colorful lanterns and cheerful street breeze, cheerful musicians playing delicious tunes for the evening festival, selling cheerful lanterns and gently swaying delicious food stalls.
+【句子 20】✅ 重组后: deep spotlight illuminated his heart as a moment stood still in his stage, before stepping onto his chest, breath, and pounding breath.
+
+🔹 模型: t5-small_tau_08_100
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill the cat jumped onto the outside birds watching the morning and bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old world under the afternoon a novel oak tree spent, reading under the completely lost he story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: the train arrived late but seemed no since the mind station was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries inspiration in a bag to jot down thoughts, random notebook sketches or even whenever she strikes no matter where she is small.
+【句子 5】✅ 重组后: night bright stars in the clear sky, ancient constellations forming stories told while cool waves carried a distant crashing of the breeze sound on shore.
+【句子 6】✅ 重组后: over the coffee cup he just placed his manuscript had a warm sudden knocked wind of all the liquid onto the spilling unfinished ink.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for the sound audience of the strangers.
+【句子 8】✅ 重组后: the dusty car in a photograph found an old library between his grandfather’s old pages showing a couple of front in standing before, seen never had he smiling.
+【句子 9】✅ 重组后: little joy she laughed as delicate butterflies across the garden, chasing playfully fluttered around her that shimmering their wings in pure sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the bread filled with freshly baked scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody perfect for the hours, determined as every evening practiced gracefully through the house piano gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged above, crashed the seagulls soared mist into the salty ocean air, sending their rhythmic cries against blending with sound.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic address made in the heart her mysterious letter inside arrived in the race excitement and curiosity a mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep sending a silent sound of the ancient house silent gears as its slowly struck clock turning through his spine echoed the old shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering at hovering to bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement with its jumping owner wagged down happiness, up its full love of eyes and the puppy.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they strengthened their mischief and trust of the moment shared by their friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying crowd filled with colorful breeze, vibrant street stalls selling delicious tunes for musicians playing colorful and lively food, the cheerful festival.
+【句子 20】✅ 重组后: deep breath took him onto a heart stage before his time pounding moment, chest in his spotlight, illuminated as stepping and stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill the jumped onto the cat outside birds, watching the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old world under the afternoon a novel oak tree spent, reading under the completely lost he story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late, the train station seemed no longer in mind since no one was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries her notebook to a bag to jot down thoughts, random inspiration sketches ideas or even whenever she strikes no matter where she is small.
+【句子 5】✅ 重组后: night bright stars carried in the clear sky, ancient constellations forming stories told while the distant stars crashing waves carried the cool breeze sound on shore.
+【句子 6】✅ 重组后: over coffee coffee cup, he just placed his manuscript had a warm sudden knocked the unfinished manuscript over all the liquid onto the spilling over ink smudging.
+【句子 7】✅ 重组后: the street was alive with bright neon lights, honking chatter of the distant cars, sound noise and playing musicians for the city audience of the strangers.
+【句子 8】✅ 重组后: the dusty book in a photograph found an old library between his grandfather’s two pages showing a couple of front in standing before, seen never had a collector smiling.
+【句子 9】✅ 重组后: little joy she laughed as delicate butterflies across the garden, playingfully fluttered around her that shimmering their wings in pure sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered battery searching for a charger in backpack for him.
+【句子 11】✅ 重组后: the freshly baked bread aroma of the everyone’s golden stomach growl hunger as carefully pulled with baked oven loaves making hot food from the baker.
+【句子 12】✅ 重组后: piano piano melody for the evening, determined as she practiced gracefully through the perfect gliding notes fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: the rocks, jagged above, soared the seagulls against mist into the salty ocean air and sent their rhythmic cries blending with sound waves.
+【句子 14】✅ 重组后: no return sealed wax in a cryptic letter made a letter with her mysterious address inside arrived in the race excitement and curiosity no mail.
+【句子 15】✅ 重组后: the chime, resonant deep midnight echoed old gears sound of the silent house as its slowly struck clock turning through his spine sending his shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering at hovering canvas to bring the first life for stroke vision waiting in the.
+【句子 17】✅ 重组后: puppy tail, returning its pure sight excitement up at its jumping owner, down the happiness, with its full love and the eyes wagged down.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secret moments as they strengthened the trust and mischief of their shared moment shared by their friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying street filled with cheerful breeze, colorful stalls selling colorful tunes for musicians playing for the lively food, colorful street music.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, chest pounding his spotlight moment in his time and illuminated him as he stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill the cat jumped onto the outside birds watching the morning and bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old world under the afternoon a novel oak tree spent, reading under the completely lost he story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late, the train station seemed to train no one since the mind was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: she carries inspiration in a bag to jot down thoughts, random notebook sketches or even whenever she strikes no matter where she is small.
+【句子 5】✅ 重组后: night bright stars in the clear sky, ancient constellations forming stories told while cool waves carried a distant crashing of the breeze sound on shore.
+【句子 6】✅ 重组后: over the coffee cup he just placed his manuscript had a warm sudden knocked wind of all the liquid onto the spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the distant cars, sound street and playing musicians for the sound audience of the strangers.
+【句子 8】✅ 重组后: the dusty car in a photograph found an old library between his grandfather’s old pages showing a couple of front in standing before, seen never had he smiling.
+【句子 9】✅ 重组后: little joy she laughed as delicate butterflies across the garden, chasing playfully fluttered around her that shimmering their wings in pure sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the bread filled with freshly baked scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody perfect for the hours, determined as every evening practiced gracefully through the house piano gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: the rocks, jagged above, crashed the seagulls soared mist into the salty ocean air, sending their rhythmic cries against blending with sound.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic address made in the heart her mysterious letter inside arrived in the race excitement and curiosity a mail.
+【句子 15】✅ 重组后: the hallway chime, resonant deep sending a silent sound of the ancient house silent gears as its slowly struck clock turning through his spine echoed the old shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering at hovering to bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement with its jumping owner wagged down happiness, up its full love of eyes and the puppy.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged as they strengthened their mischief and trust of the moment shared by their friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying crowd filled with colorful breeze, vibrant street stalls selling delicious tunes for musicians playing colorful and lively food, the cheerful festival.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, chest in his spotlight as he illuminated his time and stood still.
+
+🔹 模型: t5-small_tau_08_30
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill jumped onto the cat, outside birds watching the morning bathed its fur as golden light in the making it warm and cozy.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel oak tree in the completely lost world story, unaware of the gentle rustled old leaves that leaves above him.
+【句子 3】✅ 重组后: The train arrived late, but no mind was filled since the station was filled with travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries her notebook in a bag to jot down thoughts, random sketches or even whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: night bright stars carried in the clear sky, ancient constellations forming stories told while a distant crashing of waves carrying the breeze sound on shore.
+【句子 6】✅ 重组后: over the cup of coffee, he just placed his manuscript had a warm sudden knocked unfinished liquid over all the liquid spilling, ink smudging.
+【句子 7】✅ 重组后: The city was alive with bright neon lights, honking chatter of the pedestrians cars, sound street and playing musicians for the audience of distant strangers.
+【句子 8】✅ 重组后: the dusty book in a photograph found an old library between his grandfather’s pages showing a vintage car in front of standing before, never had he couple smiling.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden, chasing playfully fluttered around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as his battery left him desperately cluttered for searching a charger in his backpack.
+【句子 11】✅ 重组后: the baked bread with fresh scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen the baker.
+【句子 12】✅ 重组后: piano for melody perfect hours, determined through every evening she gracefully practiced the house notes as gliding fingers over empty the echoed keys.
+【句子 13】✅ 重组后: waves, jagged against the seagulls, soared above the salty ocean air, sending their rhythmic cries with mist.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic heart letter made her mysterious address inside arrived in the race, excitement and curiosity mail.
+【句子 15】✅ 重组后: The chime, resonant deep midnight echoed the old gears sound of his house silent through as its slowly ancient clock turning spine struck through his sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering canvas hesitantly bring the first life for stroke vision waiting in.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at the sight of its owner down happiness, up with its full love and jumping eyes.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns are colorful filled with cheerful breeze, vibrant street stalls selling delicious music for crowd playing and lively food, cheerful tunes.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, chest pounding moment in his spotlight, illuminated as he stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill jumped onto the cat, outside birds and the morning bathed its fur as golden light in the making it warm and cozy.
+【句子 2】✅ 重组后: Old old tree spent afternoon reading a novel under the completely lost world story, unaware that he was rustled in the gentle leaves above breeze.
+【句子 3】✅ 重组后: The train arrived late, but no mind was filled since the one station was filled with travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries out a notebook bag in her notebook to jot down thoughts, random sketches or even whenever she strikes no matter where she is.
+【句子 5】✅ 重组后: night bright stars carried in the clear sky, ancient constellations forming stories told while the distant crashing waves carried the breeze sound on shore.
+【句子 6】✅ 重组后: over all the liquid cup he just placed had a warm sudden knocked manuscript on his liquid the spilling, ink smudging.
+【句子 7】✅ 重组后: The street was alive with bright neon lights, honking chatter of the pedestrians cars, sound sound and playing musicians for the audience distant of strangers.
+【句子 8】✅ 重组后: the book found a photograph of a car in the grandfather’s old pages showing a vintage car standing before, never had he couple smiling.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden ran as they playfully fluttered around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone was just cluttered to send an important message about his death as his battery left frustrated for desperately searching a charger in his backpack.
+【句子 11】✅ 重组后: the baked bread of the oven with the golden stomach growl scent as carefully pulled from the oven loaves making hot the baker.
+【句子 12】✅ 重组后: piano for melody perfect music throughout the evening, determined she practiced gracefully through the house notes as gliding fingers over empty the echoed keys.
+【句子 13】✅ 重组后: waves, jagged against the seagulls, soared into the salty ocean air, sending their rhythmic cries above the ocean with sound.
+【句子 14】✅ 重组后: no return sealed wax red in the heart with a mysterious message, the envelope arrived in the race envelope excitement and curiosity made.
+【句子 15】✅ 重组后: A chime, resonant deep midnight the old gears sound of the silent house struck through as its slowly ancient clock turning spine echoed his sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering canvas hesitantly bring the first life for stroke vision waiting in.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at the sight of its owner, down happiness, up with its full love and jumping eyes.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by strengthened friendship.
+【句子 19】✅ 重组后: The evening lanterns swaying colorful crowd filled with cheerful breeze, vibrant stalls selling the crowd delicious music and lively food, music and cheerful music festival tunes.
+【句子 20】✅ 重组后: Deep breath took place before breath onto a heart, stepping moment, chest in his spotlight as he illuminated his time and stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill jumped onto the cat, outside birds watching the morning bathed its fur as golden light in the making it warm and cozy.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel oak tree in the completely lost world story, unaware of the gentle rustled old leaves that leaves above him.
+【句子 3】✅ 重组后: The train arrived late, but no mind was filled since the station was filled with travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries her notebook in a bag to jot down thoughts, random sketches or even whenever inspiration strikes, no matter where she is.
+【句子 5】✅ 重组后: night bright stars carried in the clear sky, ancient constellations forming stories told while a distant crashing of waves carrying the breeze sound on shore.
+【句子 6】✅ 重组后: over the cup of coffee, he just placed his manuscript had a warm sudden knocked unfinished liquid over all the liquid spilling, ink smudging.
+【句子 7】✅ 重组后: The city was alive with bright neon lights, honking chatter of the pedestrians cars, sound street and playing musicians for the audience of distant strangers.
+【句子 8】✅ 重组后: the dusty book in a photograph found an old library between his grandfather’s pages showing a vintage car in front of standing before, never had he couple smiling.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden ran, chasing playfully fluttered around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as his battery left him desperately cluttered for searching a charger in his backpack.
+【句子 11】✅ 重组后: the baked bread with fresh scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen the baker.
+【句子 12】✅ 重组后: piano for melody perfect the hours, determined through every evening she gracefully practiced the house notes as gliding fingers over empty echoed keys.
+【句子 13】✅ 重组后: waves, jagged against the seagulls, soared above the salty ocean air, sending their rhythmic cries with mist.
+【句子 14】✅ 重组后: no return sealed wax red envelope with a cryptic heart letter made her mysterious message inside arrived in the race, excitement and curiosity, address mail.
+【句子 15】✅ 重组后: The chime, resonant deep midnight echoed the old gears sound of the silent hallway as its slowly ancient clock turning through his spine echoed the sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering canvas hesitantly bring the first life for stroke vision waiting in.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at the sight of its owner down happiness, up with its full love and jumping eyes.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns are colorful filled with cheerful breeze, vibrant street stalls selling delicious music for crowd playing and lively food, cheerful tunes.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, as his chest in his spotlight illuminated him and stood still.
+
+🔹 模型: t5-small_tau_08_50
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill the jumped cat onto the outside birds, watching the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel oak tree tree in the completely lost world story, unaware of the gentle rustled old that leaves above him.
+【句子 3】✅ 重组后: late, the train arrived but seemed to mind since no one was filled to train the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries notebook inspiration in a bag to jot down thoughts, random sketches or even whenever she strikes no matter where she is.
+【句子 5】✅ 重组后: night bright stars in the clear sky, ancient constellations forming stories told while distant waves carried a cool crashing of the breeze sound on shore.
+【句子 6】✅ 重组后: over the coffee cup he just placed the manuscript had a warm sudden knocked over all his liquid liquid onto the spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians cars, sound street and playing musicians for the an audience distant of strangers.
+【句子 8】✅ 重组后: the dusty book in a photograph found an old library between his grandfather’s pages showing a vintage car in front of standing before, never had he couple smiling.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden, chasing playfully fluttered around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the baked bread filled with fresh scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody perfect for the evening hours, determined as she practiced gracefully through the house piano gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: waves, jagged above the seagulls, soared into the salty ocean air, sending their rhythmic cries against blending the mist waves.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic heart letter made her mysterious address arrived in the race, excitement and curiosity in the mail.
+【句子 15】✅ 重组后: the chime, resonant deep midnight echoed old gears sound of the silent hallway as its slowly ancient clock turning through his spine sending his shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at sight, its jumping owner wagged down happiness, up with its full eyes and the love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by their strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying colorful filled with cheerful breeze, vibrant street stalls selling delicious music for crowd playing and lively food, tunes the festival.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, chest in his spotlight as he illuminated his time and stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill the jumped cat onto the outside birds in the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel oak tree tree in the completely lost world story, unaware of the gentle rustled old leaves above him.
+【句子 3】✅ 重组后: late, the train arrived but seemed so so no one was filled since the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries notebook inspiration to a bag in jot down thoughts, random sketches or even whenever she strikes no matter where she is small.
+【句子 5】✅ 重组后: bright stars carried in the clear sky, ancient constellations forming stories told while the distant sound of waves crashing the breeze carried on shore night.
+【句子 6】✅ 重组后: over the cup of coffee he just placed the manuscript had a warm sudden knocked out all the liquid onto his spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the street cars, sound noise and playing musicians for the audience of distant pedestrians.
+【句子 8】✅ 重组后: The library in a photograph found an old car between grandfather’s old pages showing a vintage car standing before, never had he couple smiling.
+【句子 9】✅ 重组后: tiny joy she laughed as pure butterflies across the garden, chasing playfully fluttered butterflies that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone was just trying to send an important message about him dying as he died from his battery leaving desperately cluttered for searching a charger in backpack.
+【句子 11】✅ 重组后: the baked bread filled with fresh scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: Piano for melody perfect through the evening hours, determined as she practiced gracefully house the piano gliding notes through the empty fingers over the echoed keys.
+【句子 13】✅ 重组后: rocks, jagged above the seagulls, soared into the salty ocean air, sending their rhythmic cries against blending the mist waves.
+【句子 14】✅ 重组后: no return sealed wax envelope with a cryptic heart letter made her mysterious address inside arrived in the race with excitement and curiosity, address mail.
+【句子 15】✅ 重组后: Upon the chime, resonant deep midnight echoed old gears sound of the silent house, as its slowly ancient clock turning through his spine sent his shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering hovering hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement and its jumping owner of its happiness, up with all its full eyes and excitement.
+【句子 18】✅ 重组后: whispered into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying cheerful street filled with colorful breeze, vibrant street stalls selling delicious music for musicians playing cheerful and lively food, tunes.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart chest moment, pounding his heart in his spotlight, illuminated as stepping and stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill the jumped cat onto the outside birds, watching the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: old day under the rustled oak tree spent, reading novel the completely lost world story, unaware of the gentle breeze that leaves above him.
+【句子 3】✅ 重组后: late, the train arrived but seemed to mind since no one was filled to train the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries notebook inspiration in a bag to jot down thoughts, random sketches or even whenever she strikes no matter where she is.
+【句子 5】✅ 重组后: night bright stars carried in the clear sky, ancient constellations forming stories told while the distant waves carried a cool crashing of the breeze sound on shore.
+【句子 6】✅ 重组后: over the coffee cup he just placed the manuscript had a warm sudden knocked over all his liquid liquid onto the spilling, ink smudging.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the pedestrians cars, sound street and playing musicians for the an audience distant of strangers.
+【句子 8】✅ 重组后: the dusty book in a photograph found an old library between his grandfather’s pages showing a vintage car in front of standing before, never had he couple smiling.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden, chasing playfully fluttered around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the baked bread filled with fresh scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody perfect for the evening hours, determined as she practiced gracefully through the house piano gliding notes fingers over empty the echoed keys.
+【句子 13】✅ 重组后: waves, jagged against the seagulls, soared the mist into the salty ocean air, sending their rhythmic cries above blending the ocean sound.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic heart letter made her mysterious address arrived in the race, excitement and curiosity in the mail.
+【句子 15】✅ 重组后: the chime, resonant deep midnight echoed old gears sound of the silent hallway as its slowly ancient clock turning through his spine echoed the sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at sight, its jumping owner wagged down happiness, up with its full eyes and the love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they exchanged mischief and trust of the moment shared by their strengthened friendship.
+【句子 19】✅ 重组后: the evening lanterns swaying colorful crowd filled with cheerful breeze, vibrant street stalls selling delicious tunes for musicians playing and lively food, cheerful festival.
+【句子 20】✅ 重组后: deep breath took place, before breath onto a heart stepping moment, chest in his spotlight as he illuminated his time and stood still.
+
+🔹 模型: t5-small_tau_08_80
+
+🔹 生成模式: beam_search
+【句子 1】✅ 重组后: windowsill and the cat jumped onto the outside birds watching the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: he spent the afternoon reading a novel oak tree tree, under the completely lost world story, unaware of the gentle rustled old that leaves above him.
+【句子 3】✅ 重组后: late, arrived to train the station but seemed no since the mind was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries her notebook to a bag in small jot down thoughts, random inspiration sketches or even whenever she strikes no matter where she is ideas.
+【句子 5】✅ 重组后: night bright stars in the clear sky, ancient constellations forming stories told while distant stars carried a cool sound of waves the breeze crashing on shore.
+【句子 6】✅ 重组后: over coffee cup the manuscript he just placed had spilled a warm sudden knocked wind of all the liquid onto the unfinished ink.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the noisy cars, sound street and playing musicians for the an audience distant of strangers.
+【句子 8】✅ 重组后: the book in a photograph found an old library between his grandfather’s old pages showing a couple of front in standing before, seen never had a dusty smiling car.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden, chasing playfully fluttered butterflies around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the bread filled with freshly baked scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody for the hours, determined as every evening practiced gracefully through the perfect gliding notes fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: seagulls, jagged above the rocks, soared their mist into the salty ocean air with the waves sending their rhythmic cries blending with sound.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic address made in the heart her mysterious letter inside arrived in the race excitement and curiosity a mail.
+【句子 15】✅ 重组后: the chime, resonant deep midnight echoed old gears sound of the silent hallway as its slowly ancient clock turning through his spine struck the sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering to hesitantly bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at sight, its jumping owner wagged down its happiness, up with its full eyes and the love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they strengthened the trust of moment shared by their mischief.
+【句子 19】✅ 重组后: the evening crowd swaying lanterns filled with colorful breeze, vibrant street stalls selling delicious tunes for musicians playing colorful and lively food, the cheerful festival.
+【句子 20】✅ 重组后: deep breath took stage, before breath onto a heart stepping moment, chest pounding moment in his spotlight and illuminated him as his stood still.
+
+🔹 生成模式: sampling
+【句子 1】✅ 重组后: windowsill the cat jumped onto the outside windowill in the morning watching and bathed its golden light as fur making it warm and cozy.
+【句子 2】✅ 重组后: Old world under the afternoon a novel oak tree spent, reading under the completely lost he story, unaware of the gentle rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late, arrived, but seemed no mind since the train station was filled to the travelers, engaged lively conversations in sipping coffee and checking their phones.
+【句子 4】✅ 重组后: she carries a small notebook bag to jot down thoughts, random inspiration sketches or even whenever she strikes no matter where she is thoughts.
+【句子 5】✅ 重组后: night stars carried in the clear sky, ancient constellations forming stories told while a bright bright sound of waves the breeze crashing on shore.
+【句子 6】✅ 重组后: over coffee coffee cup, he just placed the manuscript a warm sudden knocked all his liquid onto the unfinished wind spilling over ink smudging.
+【句子 7】✅ 重组后: the street was alive with bright neon lights, honking chatter of the pedestrians, sound noise and playing musicians for the distant audience of strangers.
+【句子 8】✅ 重组后: the dusty car in a photograph found an old library between his grandfather’s books showing a couple of front in standing before, seen never had a couple smiling.
+【句子 9】✅ 重组后: tiny joy she laughed as pure butterflies across the garden ran playfully, chasing the fluttered around her shimmering wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving him desperately cluttered for searching his charger in his backpack.
+【句子 11】✅ 重组后: the freshly filled bread bread scent of everyone’s golden stomach growl hunger as carefully pulled with the oven loaves making hot baked kitchen baker.
+【句子 12】✅ 重组后: piano melody for the perfect hours, determined as every evening practiced gracefully through the house notes gliding fingers over empty the echoed keys.
+【句子 13】✅ 重组后: seagulls, jagged against the waves, soared mist into the salty ocean air, sending their rhythmic cries blending the above sound.
+【句子 14】✅ 重组后: a no return sealed wax envelope with cryptic heart letter made in the mysterious letter inside arrived in the race excitement and curiosity a address mail.
+【句子 15】✅ 重组后: the chime, resonant deep blue door gears sending a silent sound of his silent house as its slowly ancient clock turning through his spine struck the old shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintedbrush inspiration, hovering canvas hesitantly bring the first life for stroke vision waiting in the.
+【句子 17】✅ 重组后: puppy tail home, returning its pure sight excitement at its jumping owner, wagged down happiness, up with its full eyes and its love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they strengthened the trust and mischief of their moment shared by the strengthened friendship.
+【句子 19】✅ 重组后: the evening crowd filled with colorful lanterns and colorful stalls selling street music for delicious musicians, gently playing with lively food, cheerful swaying tunes.
+【句子 20】✅ 重组后: deep breath took him onto a heart stage before his heart stepping moment, pounding in his spotlight, illuminated as chest stood still.
+
+🔹 生成模式: beam_sampling
+【句子 1】✅ 重组后: windowsill jumped onto the cat, outside birds watching the morning bathed its as golden light in fur making it warm and cozy.
+【句子 2】✅ 重组后: the old day under a gentle oak tree spent, reading novel the completely lost world story, of him unaware in the rustled breeze that leaves above him.
+【句子 3】✅ 重组后: late, arrived to train the station but seemed no since the mind was filled to the travelers, engaged lively conversations in sipping coffee, checking and their phones.
+【句子 4】✅ 重组后: carries her notebook to a bag in small jot down thoughts, random inspiration sketches or even whenever she strikes no matter where she is ideas.
+【句子 5】✅ 重组后: night bright stars in the clear sky, ancient constellations forming stories told while distant stars carried a cool sound of waves the breeze crashing on shore.
+【句子 6】✅ 重组后: over coffee cup the manuscript he just placed had spilled a warm sudden knocked wind of all the liquid onto the unfinished ink.
+【句子 7】✅ 重组后: the city was alive with bright neon lights, honking chatter of the noisy cars, sound street and playing musicians for the an audience distant of strangers.
+【句子 8】✅ 重组后: the book in a photograph found an old library between his grandfather’s old pages showing a couple of front in standing before, seen never had a dusty smiling car.
+【句子 9】✅ 重组后: little joy she laughed as pure butterflies across the garden, chasing playfully fluttered butterflies around her that shimmering their wings in delicate sunlight.
+【句子 10】✅ 重组后: phone just was frustrated to send an important message about he died as battery leaving his desperately cluttered backpack for searching a charger in his phone.
+【句子 11】✅ 重组后: the bread filled with freshly baked scent of everyone’s golden stomach growl hunger as carefully pulled from the oven loaves making hot kitchen baker.
+【句子 12】✅ 重组后: piano melody for the hours, determined as every evening practiced gracefully through the perfect gliding notes fingers over empty the echoed keys house.
+【句子 13】✅ 重组后: the rocks, jagged against the seagulls, soared mist into the salty ocean air, sending their rhythmic cries above blending with sound waves.
+【句子 14】✅ 重组后: no return sealed wax red letter with a cryptic address made in the heart her mysterious letter inside arrived in the race excitement and curiosity a mail.
+【句子 15】✅ 重组后: the chime, resonant deep midnight echoed old gears sound of the silent hallway as its slowly ancient clock turning through his spine struck the sending shivers.
+【句子 16】✅ 重组后: blank stared for his searched hours, paintbrush inspiration, hovering hesitantly to bring the first life for stroke vision waiting in the canvas.
+【句子 17】✅ 重组后: puppy tail home, returning its pure excitement at sight, its jumping owner wagged down its happiness, up with its full eyes and the love.
+【句子 18】✅ 重组后: whispered secret into her best giggling softly knowing glances exchanged their secrets as they strengthened the trust of moment shared by their mischief.
+【句子 19】✅ 重组后: the evening lanterns swaying street filled with colorful breeze, vibrant stalls selling delicious tunes for the musicians playing colorful and lively food, crowd cheerful festival.
+【句子 20】✅ 重组后: deep breath took stage, before breath onto a heart stepping moment, chest pounding moment in his spotlight and illuminated him as his stood still.
