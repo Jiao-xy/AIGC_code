@@ -29,7 +29,7 @@ client = openai.OpenAI(api_key=api_key, base_url=base_url)
 model = "deepseek-chat"
 
 # 目标版本数
-num_versions_per_sentence = 3
+num_versions_per_sentence = 1
 collected_sentences = {}
 
 for input_text in test_sentences:
