@@ -8,7 +8,7 @@ output_dir = "/home/jxy/Data/ReoraganizationData/init/filtered/"
 os.makedirs(output_dir, exist_ok=True)
 
 # 过滤标准
-min_words = 7
+min_words = 10
 max_words = 50
 
 # 统计数据存储
