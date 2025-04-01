@@ -1,8 +1,7 @@
-# python -m modules.split_abstract_sentences
-# 使用 spaCy 将摘要分割成句子
-
+#python -m modules.split_abstract_sentences
+#使用spacy将摘要分割成句子
 import spacy
-from modules.jsonl_handler import JSONLHandler
+from modules.jsonl_handler import read_jsonl, save_results
 
 # 加载 spaCy 英文模型
 try:
@@ -16,16 +15,28 @@ def split_into_sentences(text):
     doc = nlp(text.strip())
     return [sent.text.strip() for sent in doc.sents if sent.text.strip()]
 
-def process(file_path, handler=None):
-    if handler is None:
-        handler = JSONLHandler()  # 默认读取全部
-    data = handler.read_jsonl(file_path)
+def process(file_path):
+    data = read_jsonl(file_path)
+    results = []
+
     for item in data:
+        doc_id = item.get("id")
         text = item.get("abstract", "")
-        item["sentences"] = split_into_sentences(text)
-    handler.save_results(data, file_path)
-    return data
+        sentences = split_into_sentences(text)
+        for i, sent in enumerate(sentences):
+            word_count = len(sent.split())  # 用空格分词，统计词数
+            results.append({
+                "id": doc_id,
+                "sentence_id": f"{doc_id}_{i}",
+                "sentence": sent,
+                "word_count": word_count
+            })
+
+    output_file = file_path.replace(".jsonl", "_split.jsonl")
+    save_results(results, output_file)
+    print(f"共拆分出 {len(results)} 句，保存至 {output_file}")
+    return results
+
 
 if __name__ == "__main__":
-    custom_handler = JSONLHandler(max_records=5)
-    process("../data/init/ieee-init.jsonl", handler=custom_handler)
+    process("data/modules_test_data/test.jsonl")

@@ -37,3 +37,11 @@ class Plotter:
         os.makedirs("results", exist_ok=True)
         plt.savefig(image_path, format='png')
         print(f"统计图已保存至 {image_path}")
+if __name__ == "__main__":
+    # 测试绘图功能
+    dummy_results = [
+        {"LLScore": np.random.randn(), "PPL": np.random.rand() * 100}
+        for _ in range(1000)
+    ]
+    plotter = Plotter()
+    plotter.plot_llscore_ppl(dummy_results, "dummy_file.jsonl")

@@ -13,8 +13,10 @@ def process(file_path):
                 random.shuffle(words)
             shuffled.append(" ".join(words))
         item["shuffled_sentences"] = shuffled
-    save_results(data, file_path)
+    output_file = file_path.replace(".jsonl", "_shuffled.jsonl")
+    save_results(data, output_file)
+
     return data
 
 if __name__ == "__main__":
-    process("data/raw/example.jsonl")
+    process("data/modules_test_data/test_split.jsonl")

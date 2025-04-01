@@ -23,20 +23,22 @@ def shuffle_with_target_tau(words, target_tau, max_trials=100):
 
 def process(file_path, taus=[0.3, 0.5, 0.7]):
     data = read_jsonl(file_path)
+
     for item in data:
+        original = item.get("sentence", "").strip()
+        words = original.split()
         for tau in taus:
-            key = f"tau_{int(tau*100):02d}_sentences"
-            new_versions = []
-            for s in item.get("sentences", []):
-                words = s.strip().split()
-                if len(words) <= 1:
-                    new_versions.append(s)
-                else:
-                    shuffled = shuffle_with_target_tau(words, tau)
-                    new_versions.append(" ".join(shuffled))
-            item[key] = new_versions
-    save_results(data, file_path)
+            key = f"tau_{int(tau * 100):02d}_sentence"
+            if len(words) <= 1:
+                item[key] = original  # 不能打乱就保留原样
+            else:
+                shuffled = shuffle_with_target_tau(words, tau)
+                item[key] = " ".join(shuffled)
+
+    output_file = file_path.replace(".jsonl", "_tau.jsonl")
+    save_results(data, output_path=output_file)
+    print(f"打乱后数据已保存至 {output_file}")
     return data
 
 if __name__ == "__main__":
-    process("data/raw/example.jsonl")
+    process("data/modules_test_data/test_split.jsonl")

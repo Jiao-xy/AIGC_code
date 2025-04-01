@@ -1,4 +1,4 @@
-#python -m tests.test_llscore_ppl_main
+# python -m tests.test_llscore_ppl_main
 from modules.gpt2_llscore_ppl import GPT2PPLCalculator
 from modules.jsonl_handler import JSONLHandler
 from modules.plotter import Plotter
@@ -10,10 +10,14 @@ plotter = Plotter()
 json_files = ["/home/jxy/Data/ReoraganizationData/init/ieee-init.jsonl"]
 
 for file_path in json_files:
-    abstracts = handler.read_jsonl(file_path)
+    data = handler.read_jsonl(file_path)
 
     results = []
-    for doc_id, abstract in abstracts:
+    for item in data:
+        doc_id = item.get("id")
+        abstract = item.get("abstract", "").strip()
+        if not doc_id or not abstract:
+            continue
         llscore, ppl = calculator.compute_llscore_ppl(abstract)
         results.append({
             "id": doc_id,

@@ -16,4 +16,4 @@ def process(file_path):
     return missing
 
 if __name__ == "__main__":
-    process("data/raw/example.jsonl")
+    process("data/modules_test_data/example.jsonl")
