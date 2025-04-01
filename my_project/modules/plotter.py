@@ -1,3 +1,4 @@
+#py -m modules.plotter
 import numpy as np
 import matplotlib.pyplot as plt
 import os
@@ -32,7 +33,7 @@ class Plotter:
         plt.legend()
 
         # **保存图片**
-        image_path = f"results/{os.path.basename(os.path.splitext(file_path)[0])}_llscore_ppl.png"
+        image_path = f"data/tmp/{os.path.basename(os.path.splitext(file_path)[0])}_llscore_ppl.png"
         os.makedirs("results", exist_ok=True)
         plt.savefig(image_path, format='png')
         print(f"统计图已保存至 {image_path}")

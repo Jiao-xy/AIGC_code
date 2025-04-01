@@ -1,3 +1,4 @@
+#py -m modules.gpt2_llscore_ppl
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from modules.model_manager import ModelManager  # 确保使用 ModelManager 避免重复加载
