@@ -1,0 +1,38 @@
+# 忽略常见大文件类型
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.iso
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.psd
+*.exe
+*.bin
+*.ckpt
+*.pt
+*.pth
+*.h5
+*.model
+
+# 忽略 Jupyter Notebook 的输出缓存
+.ipynb_checkpoints/
+
+# 忽略 VSCode 配置（如果你用的话）
+.vscode/
+
+# 忽略 Python 虚拟环境
+myproject/data/
+myproject/models/
+
+# PyTorch、TensorFlow 等中间缓存
+__pycache__/
+*.py[cod]
+*.so
+
+# 编译生成文件
+
+*.egg-info/

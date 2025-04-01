@@ -1,4 +1,4 @@
-#py -m modules.jsonl_handler
+#python -m modules.jsonl_handler
 import json
 import os
 

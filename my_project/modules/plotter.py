@@ -1,4 +1,4 @@
-#py -m modules.plotter
+#python -m modules.plotter
 import numpy as np
 import matplotlib.pyplot as plt
 import os
