@@ -5,17 +5,17 @@ from modules.jsonl_handler import read_jsonl, save_results
 
 def process(file_path):
     data = read_jsonl(file_path)
-    for item in data:
-        shuffled = []
-        for s in item.get("sentences", []):
-            words = s.strip().split()
-            if len(words) > 1:
-                random.shuffle(words)
-            shuffled.append(" ".join(words))
-        item["shuffled_sentences"] = shuffled
-    output_file = file_path.replace(".jsonl", "_shuffled.jsonl")
-    save_results(data, output_file)
 
+    for item in data:
+        original = item.get("sentence", "").strip()
+        words = original.split()
+        if len(words) > 1:
+            random.shuffle(words)
+        item["shuffled_sentence"] = " ".join(words)
+
+    output_file = file_path.replace(".jsonl", "_shuffled.jsonl")
+    save_results(data, output_path=output_file)
+    print(f"已打乱 {len(data)} 条句子，结果保存至 {output_file}")
     return data
 
 if __name__ == "__main__":
