@@ -21,7 +21,7 @@ class Evaluator:
         self.save_path = save_path
         if self.use_ppl:
             self.ppl_model = GPT2PPLCalculator()
-        self.rouge = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
+        self.rouge = rouge_scorer.RougeScorer(['rouge1', 'rouge2', 'rouge3', 'rougeL'], use_stemmer=True)
         self.embedder = None  # lazy load
 
     def compute_metrics(self, sentence_pairs):
@@ -79,6 +79,8 @@ class Evaluator:
             "BLEU": round(bleu, 4),
             "METEOR": round(meteor, 4),
             "ROUGE-1": round(rouge_scores['rouge1'].fmeasure, 4),
+            "ROUGE-2": round(rouge_scores['rouge2'].fmeasure, 4),
+            "ROUGE-3": round(rouge_scores['rouge3'].fmeasure, 4),
             "ROUGE-L": round(rouge_scores['rougeL'].fmeasure, 4),
             "BERTScore": round(float(bert_F1[0]), 4)
         }
@@ -137,14 +139,9 @@ if __name__ == "__main__":
         ("This is a test sentence.", "This is a test sentence."),
         ("A different output here.", "Completely different reference.")
     ]
-    metrics = evaluator.compute_metrics(sentence_pairs)
-    print(json.dumps(metrics, indent=2))
-    input()
-    data=read_jsonl("data/train_shuffled_curriculum.jsonl", max_records=10)
+
+    data = read_jsonl("data/train_shuffled_curriculum.jsonl", max_records=10)
     for record in data:
-        #print((record["original"], record["shuffled"]))
         sentence_pairs.append((record["original"], record["shuffled"]))
-        print(sentence_pairs)
-        input()
     metrics = evaluator.compute_metrics(sentence_pairs)
     print(json.dumps(metrics, indent=2))
