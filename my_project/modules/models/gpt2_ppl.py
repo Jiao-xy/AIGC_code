@@ -1,7 +1,7 @@
 #python -m modules.gpt2_llscore_ppl
 import torch
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
-from modules.model_manager import ModelManager  # 确保使用 ModelManager 避免重复加载
+from modules.models.manager import ModelManager  # 确保使用 ModelManager 避免重复加载
 
 class GPT2PPLCalculator:
     def __init__(self, model_name="gpt2-medium"):

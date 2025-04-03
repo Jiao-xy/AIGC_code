@@ -1,7 +1,7 @@
-#python -m modules.split_abstract_sentences
+#python -m modules.data.splitter
 #使用spacy将摘要分割成句子
 import spacy
-from modules.jsonl_handler import read_jsonl, save_results
+from modules.utils.jsonl_handler import read_jsonl, save_results
 
 # 加载 spaCy 英文模型
 try:

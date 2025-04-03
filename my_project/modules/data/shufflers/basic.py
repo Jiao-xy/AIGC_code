@@ -1,7 +1,7 @@
-#python -m modules.shuffle_sentences_basic
+#python -m modules.shufflers.basic
 #将句子内词随机打乱
 import random
-from modules.jsonl_handler import read_jsonl, save_results
+from modules.utils.jsonl_handler import read_jsonl, save_results
 
 def process(file_path):
     data = read_jsonl(file_path)

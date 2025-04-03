@@ -1,6 +1,6 @@
-#python -m modules.check_shuffled_dataset
+#python -m modules.data.inspector
 #检查字段完整性和打乱字段
-from modules.jsonl_handler import read_jsonl
+from modules.utils.jsonl_handler import read_jsonl
 
 def process(file_path):
     data = read_jsonl(file_path)

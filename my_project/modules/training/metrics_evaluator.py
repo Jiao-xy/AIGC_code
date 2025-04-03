@@ -1,6 +1,6 @@
 from nltk.translate.bleu_score import sentence_bleu
 from bert_score import score as bert_score
-from modules.gpt2_llscore_ppl import GPT2PPLCalculator
+from modules.models.gpt2_ppl import GPT2PPLCalculator
 
 class Evaluator:
     def __init__(self, use_ppl=False):

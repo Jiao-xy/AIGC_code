@@ -1,8 +1,8 @@
-#python -m modules.shuffle_sentences_by_tau
+#python -m modules.shufflers.by_tau
 #基于目标 tau 打乱词序
 import random
 import numpy as np
-from modules.jsonl_handler import read_jsonl, save_results
+from modules.utils.jsonl_handler import read_jsonl, save_results
 from scipy.stats import kendalltau
 
 # 简化实现，尝试多次打乱直到接近目标 tau

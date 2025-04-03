@@ -1,7 +1,7 @@
 # python -m tests.test_llscore_ppl_main
-from modules.gpt2_llscore_ppl import GPT2PPLCalculator
-from modules.jsonl_handler import JSONLHandler
-from modules.plotter import Plotter
+from modules.models.gpt2_ppl import GPT2PPLCalculator
+from modules.utils.jsonl_handler import JSONLHandler
+from modules.visual.plotter import Plotter
 
 calculator = GPT2PPLCalculator("gpt2-medium")
 handler = JSONLHandler(max_records=5)

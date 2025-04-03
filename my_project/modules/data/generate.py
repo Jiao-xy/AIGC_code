@@ -1,5 +1,4 @@
-#python -m modules.generate_curriculum_dataset
-# modules/generate_curriculum_dataset.py
+#python -m modules.data.generate
 # 根据filtered数据集生成curriculum数据集
 import json
 import random
@@ -7,8 +6,8 @@ from tqdm import tqdm
 from nltk.tokenize import word_tokenize, sent_tokenize
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-from modules.jsonl_handler import read_jsonl, save_results
-from modules.model_manager import ModelManager  # 使用统一模型管理器
+from modules.utils.jsonl_handler import read_jsonl, save_results
+from modules.models.manager import ModelManager  # 使用统一模型管理器
 
 # ==================== 加载 T5 改写模型（使用 ModelManager） ====================
 MODEL_NAME = "Vamsi/T5_Paraphrase_Paws"

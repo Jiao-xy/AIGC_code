@@ -4,7 +4,7 @@ from tqdm import tqdm
 from nltk.tokenize import word_tokenize, sent_tokenize
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-from modules.jsonl_handler import read_jsonl, save_results
+from modules.utils.jsonl_handler import read_jsonl, save_results
 
 # ==================== 模型加载（GPT改写用） ====================
 tokenizer_t5 = AutoTokenizer.from_pretrained("Vamsi/T5_Paraphrase_Paws")

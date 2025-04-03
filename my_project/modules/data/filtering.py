@@ -2,7 +2,7 @@
 #过滤句子长度不合规项
 import matplotlib.pyplot as plt
 import numpy as np
-from modules.jsonl_handler import read_jsonl, save_results
+from modules.utils.jsonl_handler import read_jsonl, save_results
 
 def process(file_path, min_words=8, max_words=50):
     data = read_jsonl(file_path)

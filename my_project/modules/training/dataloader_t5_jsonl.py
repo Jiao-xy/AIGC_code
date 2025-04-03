@@ -1,6 +1,6 @@
 from torch.utils.data import Dataset
 from transformers import PreTrainedTokenizer
-from modules.jsonl_handler import read_jsonl
+from modules.utils.jsonl_handler import read_jsonl
 
 class T5Dataset(Dataset):
     def __init__(self, file_path, tokenizer: PreTrainedTokenizer, max_length=128, difficulty=None):

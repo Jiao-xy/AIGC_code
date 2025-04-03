@@ -1,8 +1,8 @@
-#python -m modules.gpt2chinese_llscore_ppl
+#python -m modules.gpt2_ppl_zh
 import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, BertTokenizer
-from modules.model_manager import ModelManager  # 引入模型管理器
+from modules.models.manager import ModelManager  # 引入模型管理器
 
 class GPT2ChinesePPLCalculator:
     def __init__(self, model_name_or_path="uer/gpt2-distil-chinese-cluecorpussmall"):
