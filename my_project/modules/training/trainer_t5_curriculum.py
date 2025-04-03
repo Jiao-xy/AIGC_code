@@ -1,7 +1,7 @@
 #python -m modules.training.trainer_t5_curriculum
 from transformers import Trainer, TrainingArguments, T5ForConditionalGeneration, T5Tokenizer
 from modules.training.dataloader_t5_jsonl import T5Dataset
-from modules.training.metrics_evaluator import Evaluator
+from modules.training.eval.metrics_evaluator import Evaluator
 
 def train_t5_with_curriculum(
     model_name="t5-small",
