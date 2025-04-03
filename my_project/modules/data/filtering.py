@@ -1,4 +1,4 @@
-#python -m modules.filter_by_sentence_length
+#python -m modules.data.filtering
 #过滤句子长度不合规项
 import matplotlib.pyplot as plt
 import numpy as np

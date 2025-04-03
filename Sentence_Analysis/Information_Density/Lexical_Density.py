@@ -1,3 +1,4 @@
+#（1）词汇信息密度（Lexical Density, LD）
 import spacy
 
 nlp = spacy.load("en_core_web_sm")

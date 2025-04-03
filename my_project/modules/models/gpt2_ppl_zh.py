@@ -1,4 +1,4 @@
-#python -m modules.gpt2_ppl_zh
+#python -m modules.models.gpt2_ppl_zh
 import numpy as np
 import torch
 from transformers import GPT2LMHeadModel, BertTokenizer
