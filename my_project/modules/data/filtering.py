@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from modules.utils.jsonl_handler import read_jsonl, save_results
 
-def process(file_path, min_words=8, max_words=50):
+def process(file_path, min_words=4, max_words=80):
     data = read_jsonl(file_path)
     filtered = []
 
@@ -19,7 +19,7 @@ def process(file_path, min_words=8, max_words=50):
     filtered.sort(key=lambda x: x["word_count"])
 
     # 保存结果
-    output_file = file_path.replace(".jsonl", "_filtered.jsonl")
+    output_file = file_path.replace(".jsonl", "-filtered.jsonl")
     save_results(filtered, output_path=output_file)
     print(f"过滤后保留 {len(filtered)} 条句子，已保存至 {output_file}")
 
@@ -42,4 +42,11 @@ def process(file_path, min_words=8, max_words=50):
 
 
 if __name__ == "__main__":
-    process("data/modules_test_data/test_split.jsonl")
+    # process("data/modules_test_data/test_split.jsonl")
+    path=("data/init/split/ieee-init-split.jsonl",
+          "data/init/split/ieee-chatgpt-generation-split.jsonl",
+          "data/init/split/ieee-chatgpt-fusion-split.jsonl",
+          "data/init/split/ieee-chatgpt-polish-split.jsonl")
+    for i in path:
+        process(i)
+        print(f"处理完成：{i}")
