@@ -43,10 +43,11 @@ def process(file_path, min_words=4, max_words=80):
 
 if __name__ == "__main__":
     # process("data/modules_test_data/test_split.jsonl")
-    path=("data/init/split/ieee-init-split.jsonl",
+    """ path=("data/init/split/ieee-init-split.jsonl",
           "data/init/split/ieee-chatgpt-generation-split.jsonl",
           "data/init/split/ieee-chatgpt-fusion-split.jsonl",
           "data/init/split/ieee-chatgpt-polish-split.jsonl")
     for i in path:
         process(i)
-        print(f"处理完成：{i}")
+        print(f"处理完成：{i}") """
+    process("data/ieee-merged.jsonl")
