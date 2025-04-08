@@ -17,19 +17,45 @@ def extract_metrics(data):
             lls.append(item["LLScore"])
     return lengths, ppls, lls
 
-def remove_outliers(lengths, ppls, lls, z_thresh=3):
-    """剔除 Z 分数高于阈值的异常值，返回时 lengths 强制转为 int"""
-    arr = np.array([lengths, ppls, lls])
-    z_scores = np.abs((arr - arr.mean(axis=1, keepdims=True)) / arr.std(axis=1, keepdims=True))
-    mask = (z_scores < z_thresh).all(axis=0)
-    return arr[0][mask].astype(int).tolist(), arr[1][mask].tolist(), arr[2][mask].tolist()
+def remove_outliers(lengths, ppls, lls, iqr_scale=1.5):
+    """使用 IQR 方法剔除 PPL 中的异常值（先清洗非法项）"""
+    ppls_arr = np.array(ppls)
+    lengths_arr = np.array(lengths)
+    lls_arr = np.array(lls)
+
+    # ✅ 统一清除 NaN/Inf
+    mask_valid = np.isfinite(ppls_arr)
+    ppls_arr = ppls_arr[mask_valid]
+    lengths_arr = lengths_arr[mask_valid]
+    lls_arr = lls_arr[mask_valid]
+
+    print(f"[IQR] 合法样本数: {len(ppls_arr)}")
+
+    q1 = np.percentile(ppls_arr, 25)
+    q3 = np.percentile(ppls_arr, 75)
+    iqr = q3 - q1
+    lower = q1 - iqr_scale * iqr
+    upper = q3 + iqr_scale * iqr
+
+    print(f"Q1: {q1}, Q3: {q3}, IQR: {iqr}, Lower: {lower}, Upper: {upper}")
+
+    mask = (ppls_arr >= lower) & (ppls_arr <= upper)
+
+    print(f"原始样本: {len(lengths)}, 清洗后: {len(ppls_arr)}, 保留: {mask.sum()} 条")
+
+    return (
+        lengths_arr[mask].astype(int).tolist(),
+        ppls_arr[mask].tolist(),
+        lls_arr[mask].tolist()
+    )
 
 def plot_ppl_summary(input_path, output_path, filter_outliers=False):
     data = read_jsonl(input_path)
     lengths, ppls, lls = extract_metrics(data)
+    print(f"PPL长度: {len(ppls)}, 示例: {ppls[:5]}")
 
     if filter_outliers:
-        lengths, ppls, lls = remove_outliers(lengths, ppls, lls, z_thresh=3)
+        lengths, ppls, lls = remove_outliers(lengths, ppls, lls, iqr_scale=1.5)
 
     if not lengths:
         print("未找到包含 PPL、LLScore 和 word_count 的有效句子。")
@@ -100,7 +126,7 @@ if __name__ == "__main__":
         input_path="data/init/ieee-chatgpt-generation_split.jsonl",
         output_path="data/tmp/ppl_summary_gpt.png"
     )
-    # 额外去除异常值版本
+    # 额外去除异常值版本（仅基于 PPL IQR）
     plot_ppl_summary(
         input_path="data/init/ieee-init_split.jsonl",
         output_path="data/tmp/ppl_summary_human_filtered.png",
