@@ -17,17 +17,27 @@ def extract_metrics(data):
             lls.append(item["LLScore"])
     return lengths, ppls, lls
 
+def remove_outliers(lengths, ppls, lls, z_thresh=3):
+    """剔除 Z 分数高于阈值的异常值，返回时 lengths 强制转为 int"""
+    arr = np.array([lengths, ppls, lls])
+    z_scores = np.abs((arr - arr.mean(axis=1, keepdims=True)) / arr.std(axis=1, keepdims=True))
+    mask = (z_scores < z_thresh).all(axis=0)
+    return arr[0][mask].astype(int).tolist(), arr[1][mask].tolist(), arr[2][mask].tolist()
 
-def plot_ppl_summary(input_path, output_path):
+def plot_ppl_summary(input_path, output_path, filter_outliers=False):
     data = read_jsonl(input_path)
     lengths, ppls, lls = extract_metrics(data)
+
+    if filter_outliers:
+        lengths, ppls, lls = remove_outliers(lengths, ppls, lls, z_thresh=3)
 
     if not lengths:
         print("未找到包含 PPL、LLScore 和 word_count 的有效句子。")
         return
 
     fig, axs = plt.subplots(2, 2, figsize=(14, 10))
-    fig.suptitle("Sentence Statistics Summary", fontsize=16)
+    title_prefix = "Filtered " if filter_outliers else ""
+    fig.suptitle(f"{title_prefix}Sentence Statistics Summary", fontsize=16)
 
     # 1. 句长 vs PPL 散点图
     axs[0, 0].scatter(lengths, ppls, alpha=0.5, edgecolors='k', s=40)
@@ -36,14 +46,17 @@ def plot_ppl_summary(input_path, output_path):
     axs[0, 0].set_ylabel("PPL")
     axs[0, 0].grid(True, linestyle="--", alpha=0.5)
 
-    # 加趋势线
+    # 加趋势线（去除非法值）
     try:
-        z = np.polyfit(lengths, ppls, 1)
-        p = np.poly1d(z)
-        axs[0, 0].plot(sorted(lengths), p(sorted(lengths)), color='red', label='Trend')
-        axs[0, 0].legend()
-    except:
-        pass
+        clean_data = [(l, p) for l, p in zip(lengths, ppls) if np.isfinite(l) and np.isfinite(p)]
+        if len(clean_data) >= 2:
+            x_vals, y_vals = zip(*clean_data)
+            z = np.polyfit(x_vals, y_vals, 1)
+            p = np.poly1d(z)
+            axs[0, 0].plot(sorted(x_vals), p(sorted(x_vals)), color='red', label='Trend')
+            axs[0, 0].legend()
+    except Exception as e:
+        print(f"⚠️ 趋势线绘制失败: {e}")
 
     # 2. PPL 分布图
     axs[0, 1].hist(ppls, bins=50, alpha=0.7, color='red', edgecolor='black')
@@ -64,7 +77,7 @@ def plot_ppl_summary(input_path, output_path):
     axs[1, 0].legend()
 
     # 4. 句长分布图
-    axs[1, 1].hist(lengths, bins=range(min(lengths), max(lengths) + 1), alpha=0.7, color='green', edgecolor='black')
+    axs[1, 1].hist(lengths, bins=range(int(min(lengths)), int(max(lengths)) + 1), alpha=0.7, color='green', edgecolor='black')
     axs[1, 1].axvline(np.mean(lengths), color='orange', linestyle='--', label=f"Mean={np.mean(lengths):.2f}")
     axs[1, 1].set_title("Sentence Length Distribution")
     axs[1, 1].set_xlabel("Word Count")
@@ -82,9 +95,19 @@ if __name__ == "__main__":
     plot_ppl_summary(
         input_path="data/init/ieee-init_split.jsonl",
         output_path="data/tmp/ppl_summary_human.png"
-    ) 
+    )
     plot_ppl_summary(
         input_path="data/init/ieee-chatgpt-generation_split.jsonl",
         output_path="data/tmp/ppl_summary_gpt.png"
     )
-
+    # 额外去除异常值版本
+    plot_ppl_summary(
+        input_path="data/init/ieee-init_split.jsonl",
+        output_path="data/tmp/ppl_summary_human_filtered.png",
+        filter_outliers=True
+    )
+    plot_ppl_summary(
+        input_path="data/init/ieee-chatgpt-generation_split.jsonl",
+        output_path="data/tmp/ppl_summary_gpt_filtered.png",
+        filter_outliers=True
+    )

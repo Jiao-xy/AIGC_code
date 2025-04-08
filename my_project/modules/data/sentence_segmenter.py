@@ -52,7 +52,8 @@ class SentenceSegmenter:
         max_short_len=6,                  # 仅对长度 <= 该值的句子考虑合并
         auto_threshold=False,             # 是否自动估算阈值
         threshold_strategy="percentile", # 自动估算策略（percentile / robust / std）
-        sample_ratio=0.1                  # 自动估算使用的句子比例
+        sample_ratio=0.1,                 # 自动估算使用的句子比例
+        strip_references=True             # ✅ 是否移除引用编号如 [1]. [3], [4–5]
     ):
         """
         初始化 SentenceSegmenter 分句器
@@ -66,6 +67,7 @@ class SentenceSegmenter:
         - auto_threshold: 是否启用自动估算
         - threshold_strategy: 自动估算使用的统计策略
         - sample_ratio: 用于估算的句子采样比例
+        - strip_references: 是否自动清除 [1], [2] 等引用编号
         """
         self.nlp = spacy.load("en_core_web_sm")
         if "prevent_split_on_decimal" not in self.nlp.pipe_names:
@@ -82,6 +84,7 @@ class SentenceSegmenter:
         self.auto_threshold = auto_threshold
         self.threshold_strategy = threshold_strategy
         self.sample_ratio = sample_ratio
+        self.strip_references = strip_references
 
         self.dynamic_thresholds = None  # 保存自动估算后的阈值
 
@@ -93,6 +96,10 @@ class SentenceSegmenter:
     def segment(self, text):
         """主函数：分句并根据配置决定是否合并句子"""
         text = text.strip()
+
+        if self.strip_references:
+            text = self._remove_reference_numbers(text)
+
         doc = self.nlp(text)
         sents = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
 
@@ -108,8 +115,13 @@ class SentenceSegmenter:
 
         return [(s, p) for s, p in zip(sents, scores)]
 
+    def _remove_reference_numbers(self, text):
+        """
+        去除如 [1]、[2],、[3].、[4–5] 等常见引用编号
+        """
+        return re.sub(r"\s*\[\d+(?:[-–]\d+)?\][\.,]?", "", text)
+
     def _estimate_thresholds(self, sentences):
-        """对当前句子集合估算动态阈值"""
         sample_size = max(5, int(len(sentences) * self.sample_ratio))
         sample = sentences[:sample_size]
         scores = [self.ppl_model.compute_llscore_ppl(s) for s in sample]
@@ -138,18 +150,11 @@ class SentenceSegmenter:
         i = 0
         while i < len(sentences):
             curr = sentences[i]
-            if re.fullmatch(r"\[\d+\],?", curr):
+            if re.fullmatch(r"\[\d+\][\.,]?", curr):
                 if i + 1 < len(sentences):
                     merged.append(curr + " " + sentences[i + 1])
                     i += 2
                 else:
-                    i += 1
-            elif re.match(r"^\[\d+\],", curr) and len(curr.split()) <= 4:
-                if i + 1 < len(sentences):
-                    merged.append(curr + " " + sentences[i + 1])
-                    i += 2
-                else:
-                    merged.append(curr)
                     i += 1
             else:
                 merged.append(curr)

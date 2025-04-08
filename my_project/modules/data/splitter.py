@@ -13,6 +13,7 @@ def process(file_path):
         auto_threshold=True,               # ✅ 启用自动估算
         threshold_strategy="percentile",   # 可选 "robust" 或 "std"
         max_short_len=6
+        
     )
 
     data = read_jsonl(file_path)
