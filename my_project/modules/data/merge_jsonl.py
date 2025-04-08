@@ -30,7 +30,7 @@ def merge_jsonl_with_source(file_paths, source_labels, output_path):
 if __name__ == "__main__":
     file_paths = [
         "data/init/split/ieee-init-split.jsonl",
-          "data/init/split/ieee-chatgpt-generation-split.jsonl",
+        "data/init/split/ieee-chatgpt-generation-split.jsonl",
           
     ]
     source_labels = [
