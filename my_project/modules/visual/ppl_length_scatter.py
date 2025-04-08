@@ -120,20 +120,20 @@ def plot_ppl_summary(input_path, output_path, filter_outliers=False):
 if __name__ == "__main__":
     plot_ppl_summary(
         input_path="data/init/ieee-init_split.jsonl",
-        output_path="data/tmp/ppl_summary_human.png"
+        output_path="data/init/ppl_summary_human.png"
     )
     plot_ppl_summary(
         input_path="data/init/ieee-chatgpt-generation_split.jsonl",
-        output_path="data/tmp/ppl_summary_gpt.png"
+        output_path="data/init/ppl_summary_gpt.png"
     )
     # 额外去除异常值版本（仅基于 PPL IQR）
     plot_ppl_summary(
         input_path="data/init/ieee-init_split.jsonl",
-        output_path="data/tmp/ppl_summary_human_filtered.png",
+        output_path="data/init/ppl_summary_human_filtered.png",
         filter_outliers=True
     )
     plot_ppl_summary(
         input_path="data/init/ieee-chatgpt-generation_split.jsonl",
-        output_path="data/tmp/ppl_summary_gpt_filtered.png",
+        output_path="data/init/ppl_summary_gpt_filtered.png",
         filter_outliers=True
     )
