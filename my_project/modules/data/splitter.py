@@ -15,7 +15,7 @@ def process(file_path):
         max_short_len=6
     )
 
-    data = read_jsonl(file_path, max_records=3000)
+    data = read_jsonl(file_path)
     results = []
 
     for item in tqdm(data, desc=f"Splitting {file_path}"):
@@ -36,6 +36,9 @@ def process(file_path):
     output_file = file_path.replace(".jsonl", "_split.jsonl")
     save_results(results, output_file)
     print(f"共拆分出 {len(results)} 句，保存至 {output_file}")
+
+    # ✅ 输出当前分句器的阈值信息
+    print("当前分句器阈值信息：", segmenter.get_thresholds())
     return results
 
 if __name__ == "__main__":

@@ -6,9 +6,9 @@ import numpy as np
 from spacy.language import Language
 from modules.models.gpt2_ppl import GPT2PPLCalculator
 
-# 组件：防止 spaCy 错误地在小数点处切分句子
 @Language.component("prevent_split_on_decimal")
 def prevent_split_on_decimal(doc):
+    """阻止 spaCy 在小数点中间错误分句，例如 3.14 被切成 '3.' 和 '14'"""
     for i, token in enumerate(doc[:-2]):
         if (
             token.text == "." and
@@ -18,12 +18,14 @@ def prevent_split_on_decimal(doc):
             doc[i + 1].is_sent_start = False
     return doc
 
-# 自动估算 PPL 和 LLScore 阈值（支持三种策略）
 def compute_auto_thresholds(ppls, lls, method="percentile"):
+    """
+    根据指定策略自动估算 PPL 和 LLScore 的阈值
+    """
     if method == "percentile":
-        ppl_threshold = np.percentile(ppls, 95)  # PPL 超过 95 分位数视为异常
-        llscore_threshold = np.percentile(lls, 85)  # LLScore 超过 85 分位视为异常
-    elif method == "robust":  # 使用 IQR 方式抗异常值
+        ppl_threshold = np.percentile(ppls, 95)
+        llscore_threshold = np.percentile(lls, 85)
+    elif method == "robust":
         ppl_median = np.median(ppls)
         ppl_iqr = np.percentile(ppls, 75) - np.percentile(ppls, 25)
         ppl_threshold = ppl_median + 1.5 * ppl_iqr
@@ -31,7 +33,7 @@ def compute_auto_thresholds(ppls, lls, method="percentile"):
         ll_median = np.median(lls)
         ll_iqr = np.percentile(lls, 75) - np.percentile(lls, 25)
         llscore_threshold = ll_median + 1.0 * ll_iqr
-    else:  # 默认 mean + std 方式
+    else:
         ppl_threshold = np.mean(ppls) + 1.5 * np.std(ppls)
         llscore_threshold = np.mean(lls) + 0.5 * np.std(lls)
 
@@ -40,19 +42,31 @@ def compute_auto_thresholds(ppls, lls, method="percentile"):
         "llscore_threshold": llscore_threshold
     }
 
-# 主类：分句器，支持多种策略、阈值估算与合并逻辑
 class SentenceSegmenter:
     def __init__(
         self,
-        enable_reference_merge=True,      # 是否合并引用前缀（如 [1],）
-        enable_ppl_merge=True,            # 是否启用基于 PPL/LLScore 的句子合并
-        ppl_threshold=100,                # PPL 静态阈值（仅在未启用自动估算时生效）
-        llscore_threshold=-60,            # LLScore 静态阈值（值越大越糟，越接近0越糟）
-        max_short_len=6,                  # 仅对长度小于等于该值的句子考虑合并
-        auto_threshold=False,             # 是否自动估算阈值（从样本中）
-        threshold_strategy="percentile", # 自动估算策略：percentile / robust / std
-        sample_ratio=0.1                  # 阈值估算时采样比例（例如 10%）
+        enable_reference_merge=True,       # 是否合并诸如 [1], 等引用编号
+        enable_ppl_merge=True,            # 是否基于语言模型打分进行句子合并
+        ppl_threshold=100,                # 静态困惑度阈值（越高表示越不可信）
+        llscore_threshold=-60,            # 静态对数似然阈值（越接近 0 越差）
+        max_short_len=6,                  # 仅对长度 <= 该值的句子考虑合并
+        auto_threshold=False,             # 是否自动估算阈值
+        threshold_strategy="percentile", # 自动估算策略（percentile / robust / std）
+        sample_ratio=0.1                  # 自动估算使用的句子比例
     ):
+        """
+        初始化 SentenceSegmenter 分句器
+
+        参数说明：
+        - enable_reference_merge: 是否将如 [1], 的引用编号合并到后续句子
+        - enable_ppl_merge: 是否基于 PPL + LLScore 进行短句合并
+        - ppl_threshold: 静态困惑度阈值（不启用自动估算时生效）
+        - llscore_threshold: 静态对数似然阈值（不启用自动估算时生效）
+        - max_short_len: 小于等于该词数的句子才考虑被合并
+        - auto_threshold: 是否启用自动估算
+        - threshold_strategy: 自动估算使用的统计策略
+        - sample_ratio: 用于估算的句子采样比例
+        """
         self.nlp = spacy.load("en_core_web_sm")
         if "prevent_split_on_decimal" not in self.nlp.pipe_names:
             self.nlp.add_pipe("prevent_split_on_decimal", before="parser")
@@ -61,28 +75,30 @@ class SentenceSegmenter:
         self.enable_ppl_merge = enable_ppl_merge
         self.ppl_threshold = ppl_threshold
         self.llscore_threshold = llscore_threshold
+        self.default_ppl_threshold = ppl_threshold
+        self.default_llscore_threshold = llscore_threshold
         self.max_short_len = max_short_len
 
         self.auto_threshold = auto_threshold
         self.threshold_strategy = threshold_strategy
         self.sample_ratio = sample_ratio
 
+        self.dynamic_thresholds = None  # 保存自动估算后的阈值
+
         if self.enable_ppl_merge:
             self.ppl_model = GPT2PPLCalculator()
 
-        self._threshold_determined = False  # 只在首次估算后输出一次
+        self._threshold_determined = False
 
-    # 主调用接口
     def segment(self, text):
+        """主函数：分句并根据配置决定是否合并句子"""
         text = text.strip()
         doc = self.nlp(text)
         sents = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
 
-        # 处理如 [1], 这样的引用句合并
         if self.enable_reference_merge:
             sents = self._merge_reference_prefix(sents)
 
-        # 自动阈值估算并句子打分 + 合并
         if self.enable_ppl_merge:
             if self.auto_threshold and not self._threshold_determined:
                 self._estimate_thresholds(sents)
@@ -92,8 +108,8 @@ class SentenceSegmenter:
 
         return [(s, p) for s, p in zip(sents, scores)]
 
-    # 自动估算当前语料的合并阈值（PPL + LLScore）
     def _estimate_thresholds(self, sentences):
+        """对当前句子集合估算动态阈值"""
         sample_size = max(5, int(len(sentences) * self.sample_ratio))
         sample = sentences[:sample_size]
         scores = [self.ppl_model.compute_llscore_ppl(s) for s in sample]
@@ -102,10 +118,22 @@ class SentenceSegmenter:
         thresholds = compute_auto_thresholds(ppls, lls, method=self.threshold_strategy)
         self.ppl_threshold = thresholds["ppl_threshold"]
         self.llscore_threshold = thresholds["llscore_threshold"]
+        self.dynamic_thresholds = thresholds
         self._threshold_determined = True
 
-    # 合并如 [1], 的引用编号与正文
+    def get_thresholds(self):
+        """返回当前和默认阈值信息"""
+        return {
+            "ppl_threshold": self.ppl_threshold,
+            "llscore_threshold": self.llscore_threshold,
+            "default_ppl": self.default_ppl_threshold,
+            "default_llscore": self.default_llscore_threshold,
+            "auto": self.auto_threshold,
+            "strategy": self.threshold_strategy
+        }
+
     def _merge_reference_prefix(self, sentences):
+        """合并如 [1], 等引用编号"""
         merged = []
         i = 0
         while i < len(sentences):
@@ -128,19 +156,9 @@ class SentenceSegmenter:
                 i += 1
         return merged
 
-    # 基于 PPL 和 LLScore 判断是否合并当前句子到前一句
     def _merge_based_on_ppl(self, sentences):
+        """根据 PPL 和 LLScore 合并异常短句"""
         scores = [self.ppl_model.compute_llscore_ppl(sent) for sent in sentences]
-        if self.auto_threshold and not self._threshold_determined:
-            # 此时合并前才真正触发估算并输出阈值（仅一次）
-            ppls = [p for _, p in scores]
-            lls = [ll for ll, _ in scores]
-            thresholds = compute_auto_thresholds(ppls, lls, method=self.threshold_strategy)
-            self.ppl_threshold = thresholds["ppl_threshold"]
-            self.llscore_threshold = thresholds["llscore_threshold"]
-            print(f"[Auto Thresholds Final] PPL > {self.ppl_threshold:.2f}, LLScore > {self.llscore_threshold:.2f}")
-            self._threshold_determined = True
-
         merged = []
         merged_scores = []
         i = 0
