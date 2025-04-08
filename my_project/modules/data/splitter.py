@@ -1,12 +1,12 @@
 # python -m modules.data.splitter
-# 使用 spaCy 将摘要拆分为句子，并避免小数点被错误拆分
+# 使用 spaCy 拆句，并防止在小数点或 [1], 被误分割
 
 import spacy
 import re
+from spacy.language import Language
 from modules.utils.jsonl_handler import read_jsonl, save_results
-from spacy.language import Language  # ✅ 新增这一行
 
-# ✅ 加载 spaCy 并添加小数保护规则
+# 加载 spaCy 英文模型
 try:
     nlp = spacy.load("en_core_web_sm")
 except:
@@ -14,55 +14,54 @@ except:
     os.system("python -m spacy download en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
+# ✅ 注册自定义断句规则组件
+@Language.component("prevent_split_on_decimal")
 def prevent_split_on_decimal(doc):
-    """
-    自定义 spaCy 分句规则：防止小数点之间被当作句子边界
-    """
     for i, token in enumerate(doc[:-2]):
         if (
-            token.text == '.' and
+            token.text == "." and
             token.nbor(-1).like_num and
             token.nbor(1).like_num
         ):
             doc[i + 1].is_sent_start = False
     return doc
 
-# ✅ 注册自定义分句规则
-nlp.add_pipe(prevent_split_on_decimal, before="parser")
+# ✅ 正确地添加到 spaCy pipeline（字符串名而不是函数对象）
+if "prevent_split_on_decimal" not in nlp.pipe_names:
+    nlp.add_pipe("prevent_split_on_decimal", before="parser")
+
+def merge_reference_prefix(sentences):
+    """
+    合并 '[1], xxx' 或 '[3],' 等引用型前缀与后句
+    """
+    merged = []
+    i = 0
+    while i < len(sentences):
+        curr = sentences[i]
+        # 情况1：单独一个 "[1]," 没有其他内容
+        if re.fullmatch(r"\[\d+\],?", curr):
+            if i + 1 < len(sentences):
+                merged.append(curr + " " + sentences[i + 1])
+                i += 2
+            else:
+                i += 1
+        # 情况2：开头是 "[3]," 且句子太短（可能是短语）
+        elif re.match(r"^\[\d+\],", curr) and len(curr.split()) <= 4:
+            if i + 1 < len(sentences):
+                merged.append(curr + " " + sentences[i + 1])
+                i += 2
+            else:
+                merged.append(curr)
+                i += 1
+        else:
+            merged.append(curr)
+            i += 1
+    return merged
 
 def split_into_sentences(text):
     doc = nlp(text.strip())
     sents = [sent.text.strip() for sent in doc.sents if sent.text.strip()]
     return merge_reference_prefix(sents)
-
-def merge_reference_prefix(sentences):
-    """
-    合并 '[1], ...' 或 '[3], and so on.' 这类不完整句子
-    """
-    merged = []
-    i = 0
-    while i < len(sentences):
-        current = sentences[i]
-        # 检查是否是类似 "[1], something" 或单纯的 "[1]," 独立句
-        if re.fullmatch(r"\[\d+\],?", current) or re.match(r"^\[\d+\],?\s*$", current):
-            # 跳过或拼接下一句
-            if i + 1 < len(sentences):
-                merged.append(current + " " + sentences[i + 1])
-                i += 2
-            else:
-                i += 1
-        elif re.match(r"^\[\d+\],", current) and len(current.split()) <= 4:
-            # 很短的 "[1], weighted average" 这种句子，尝试合并下一句
-            if i + 1 < len(sentences):
-                merged.append(current + " " + sentences[i + 1])
-                i += 2
-            else:
-                merged.append(current)
-                i += 1
-        else:
-            merged.append(current)
-            i += 1
-    return merged
 
 def process(file_path):
     data = read_jsonl(file_path)
@@ -87,4 +86,6 @@ def process(file_path):
     return results
 
 if __name__ == "__main__":
-    process("data/modules_test_data/test.jsonl")
+    #process("data/modules_test_data/test.jsonl")
+    process("data/init/ieee-init.jsonl")
+    process("data/init/ieee-chatgpt-generation.jsonl")
