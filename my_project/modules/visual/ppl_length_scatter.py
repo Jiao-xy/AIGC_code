@@ -81,5 +81,10 @@ def plot_ppl_summary(input_path, output_path):
 if __name__ == "__main__":
     plot_ppl_summary(
         input_path="data/init/ieee-init_split.jsonl",
-        output_path="data/tmp/ppl_summary.png"
+        output_path="data/tmp/ppl_summary_human.png"
+    ) 
+    plot_ppl_summary(
+        input_path="data/init/ieee-chatgpt-generation_split.jsonl",
+        output_path="data/tmp/ppl_summary_gpt.png"
     )
+

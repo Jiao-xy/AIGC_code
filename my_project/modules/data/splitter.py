@@ -6,17 +6,19 @@ from modules.data.sentence_segmenter import SentenceSegmenter
 from tqdm import tqdm
 
 def process(file_path):
+    # 初始化分句器：启用引用合并、PPL + LLScore 合并、自动阈值估算
     segmenter = SentenceSegmenter(
         enable_reference_merge=True,
         enable_ppl_merge=True,
-        ppl_threshold=100,
+        auto_threshold=True,               # ✅ 启用自动估算
+        threshold_strategy="percentile",   # 可选 "robust" 或 "std"
         max_short_len=6
     )
 
-    data = read_jsonl(file_path,max_records=3000)
+    data = read_jsonl(file_path, max_records=3000)
     results = []
 
-    for item in tqdm(data, desc="Splitting and scoring"):
+    for item in tqdm(data, desc=f"Splitting {file_path}"):
         doc_id = item.get("id")
         text = item.get("abstract", "")
         segmented = segmenter.segment(text)
@@ -37,6 +39,5 @@ def process(file_path):
     return results
 
 if __name__ == "__main__":
-    # process("data/modules_test_data/test.jsonl")
     process("data/init/ieee-init.jsonl")
-    # process("data/init/ieee-chatgpt-generation.jsonl")
+    process("data/init/ieee-chatgpt-generation.jsonl")
