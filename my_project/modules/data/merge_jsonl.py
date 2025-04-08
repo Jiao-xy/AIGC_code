@@ -29,8 +29,10 @@ def merge_jsonl_with_source(file_paths, source_labels, output_path):
 # ✅ 示例运行方式
 if __name__ == "__main__":
     file_paths = [
-        "data/init/split/ieee-init-split.jsonl",
-        "data/init/split/ieee-chatgpt-generation-split.jsonl",
+        # "data/init/split/ieee-init-split.jsonl",
+        # "data/init/split/ieee-chatgpt-generation-split.jsonl",
+        "data/init/ieee-init_split.jsonl",
+        "data/init/ieee-chatgpt-generation_split.jsonl"
           
     ]
     source_labels = [
