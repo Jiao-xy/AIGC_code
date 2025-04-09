@@ -3,11 +3,11 @@
 
 import random
 import time
+import os
 from tqdm import tqdm
 from modules.utils.jsonl_handler import read_jsonl, save_results
 from modules.analysis.aggressive_shuffle_analysis import aggressive_shuffle, evaluate_dissimilarity
 from modules.data.shufflers.by_tau import shuffle_with_target_tau
-
 
 def apply_strategy(sentence, strategy):
     """根据扰动策略生成打乱句子"""
@@ -25,7 +25,6 @@ def apply_strategy(sentence, strategy):
     else:
         return sentence, "original"
 
-
 def run_best_shuffle(text):
     """多轮扰动，选出最不相似的版本"""
     best_score = float("inf")
@@ -37,7 +36,6 @@ def run_best_shuffle(text):
             best_score = score
             best_output = shuffled
     return best_output, best_score, None
-
 
 def segment_chunks_by_wordcount(data, target_chunks=100):
     """根据 word_count 分段（单词数从小到大变化为新段）"""
@@ -55,7 +53,6 @@ def segment_chunks_by_wordcount(data, target_chunks=100):
         chunks.append(current_chunk)
     return chunks
 
-
 def generate_grouped_shuffle(input_path, output_path):
     """主函数：分组 + 分配策略 + 应用扰动 + 统一保存"""
     all_data = read_jsonl(input_path)
@@ -63,6 +60,7 @@ def generate_grouped_shuffle(input_path, output_path):
 
     assert len(grouped_data) >= 10, "分组不足 10 组，数据过少"
 
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     total_results = []
     strategies_per_group = [
         ["tau_0.2"] * 2 + ["tau_0.5"] * 2 + ["tau_0.8"] * 2 + ["random"] * 2 + ["aggressive"] * 2
@@ -99,9 +97,13 @@ def generate_grouped_shuffle(input_path, output_path):
         total_results.extend(group_results)
         print(f"⏱️ Group {group_id} 完成，耗时 {time.time() - group_start:.2f} 秒")
 
+        # ✅ 每处理完一组，追加保存一次中间结果
+        intermediate_path = output_path.replace(".jsonl", f"_partial_g{group_id}.jsonl")
+        save_results(group_results, intermediate_path)
+        print(f"📁 已保存中间结果至 {intermediate_path}")
+
     save_results(total_results, output_path)
     print(f"✅ 共生成 {len(total_results)} 条训练对，保存至 {output_path}")
-
 
 if __name__ == "__main__":
     generate_grouped_shuffle(
