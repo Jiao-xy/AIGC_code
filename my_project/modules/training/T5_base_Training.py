@@ -1,21 +1,23 @@
-import torch
-from transformers import Trainer, TrainingArguments
-from datasets import Dataset
+# python -m modules.training.T5_base_Training.py
+# modules/training/t5_base_training.py
+# 使用 t5-base 模型培训打乱文本恢复任务，逐随进度保存模型
+
 import os
-from tqdm import tqdm
 import json
+from tqdm import tqdm
+from transformers import Trainer, TrainingArguments, T5Tokenizer, T5ForConditionalGeneration
+from datasets import Dataset
 
-from modules.models.manager import ModelManager  # ✅ 加载模型管理器
-from modules.utils.jsonl_handler import read_jsonl  # ✅ 加载 JSONL 文件
-from transformers import T5Tokenizer, T5ForConditionalGeneration
+from modules.utils.jsonl_handler import read_jsonl
+from modules.models.manager import ModelManager
 
-# **1️⃣ 模型与数据路径设定，仅训练 t5-base + reorder 数据集**
+# 【基本设置】
 model_name = "t5-base"
 dataset_path = "data/train_pairs/grouped_shuffle_all.jsonl"
 output_dir = "models"
 version_name = "t5-base_reorder"
 
-# **2️⃣ 加载 Tokenizer 与模型（使用 ModelManager）**
+# 【加载 Tokenizer 和模型（使用 ModelManager 防止重复加载）】
 if ModelManager.is_model_loaded(model_name):
     model, tokenizer = ModelManager.get_model(model_name)
 else:
@@ -23,13 +25,13 @@ else:
     model = T5ForConditionalGeneration.from_pretrained(model_name)
     ModelManager.register_model(model_name, model, tokenizer)
 
-# **3️⃣ 读取并预处理数据**
+# 【读取数据，进行预处理】
 data = read_jsonl(dataset_path)
 dataset = Dataset.from_list(data)
 
 def preprocess_function(examples):
-    inputs = ["reorder: " + s for s in examples["shuffled_sentence"]]
-    targets = examples["original_sentence"]
+    inputs = ["reorder: " + s for s in examples["shuffled"]]
+    targets = examples["original"]
     model_inputs = tokenizer(inputs, max_length=128, truncation=True, padding="max_length")
     labels = tokenizer(targets, max_length=128, truncation=True, padding="max_length")
     model_inputs["labels"] = labels["input_ids"]
@@ -42,7 +44,7 @@ eval_dataset = dataset["test"]
 
 print(f"✅ 数据预处理完成，共 {len(train_dataset)} 条训练数据，{len(eval_dataset)} 条验证数据")
 
-# **4️⃣ 设置训练参数**
+# 【设置培训参数】
 training_args = TrainingArguments(
     output_dir=os.path.join(output_dir, version_name),
     per_device_train_batch_size=4,
@@ -67,14 +69,13 @@ trainer = Trainer(
     eval_dataset=eval_dataset,
 )
 
-# **5️⃣ 分阶段训练与评估（每10%保存一次）**
+# 【递增进度保存模型 + 分段评估】
 epochs = training_args.num_train_epochs
 eval_results = {}
-save_ratios = [i / 10 for i in range(1, 11)]
+save_ratios = [i / 10 for i in range(1, 11)]  # 10%为单位
 
 for epoch in tqdm(range(epochs), desc=f"Training {version_name}"):
     trainer.train()
-
     for progress in save_ratios:
         if epoch == int(epochs * progress) - 1:
             tag = f"{int(progress * 100)}"
@@ -86,7 +87,7 @@ for epoch in tqdm(range(epochs), desc=f"Training {version_name}"):
             eval_results[tag] = eval_metrics
             print(f"📊 {tag}% 评估结果: {eval_metrics}")
 
-# **最终保存模型与评估结果**
+# 【最终保存完模型 + 评估结果】
 save_path_final = os.path.join(output_dir, f"{version_name}_100")
 model.save_pretrained(save_path_final)
 tokenizer.save_pretrained(save_path_final)
@@ -95,7 +96,7 @@ eval_results["100"] = eval_metrics
 print(f"✅ 训练完成，最终模型保存至 {save_path_final}")
 print(f"📊 最终评估结果: {eval_metrics}")
 
-# **保存评估结果为 JSON 文件**
+# 【保存评估结果为 JSON】
 eval_results_path = os.path.join(output_dir, f"{version_name}_eval_results.json")
 with open(eval_results_path, "w") as f:
     json.dump(eval_results, f, indent=4)
